@@ -1,0 +1,202 @@
+[
+{
+  "model": "basketball.basketball",
+  "pk": 1,
+  "fields": {
+    "names": "Stephen Curry",
+    "image": "https://cdn.vox-cdn.com/thumbor/q3n3qNhRLtdiT3AtXdFBkW68Kzs=/0x0:3079x2053/1200x800/filters:focal(1385x508:1877x1000)/cdn.vox-cdn.com/uploads/chorus_image/image/70965529/1402223229.0.jpg",
+    "description": "Widely regarded as one of the greatest basketball players of all time, and as the greatest shooter in NBA history,[2] Curry is credited with revolutionizing the sport by inspiring teams and players to routinely utilize the three-point shot.",
+    "retired": false,
+    "age": "34",
+    "teams": [
+      1
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 2,
+  "fields": {
+    "names": "Lebron James",
+    "image": "https://media.gettyimages.com/photos/lebron-james-…ing-the-game-the-picture-id1240117243?s=2048x2048",
+    "description": "LeBron James is an American basketball player with the Los Angeles Lakers. James first garnered national attention as the top high school basketball player in the country. With his unique combination of size, athleticism and court vision, he became a four-time NBA MVP.",
+    "retired": false,
+    "age": "37",
+    "teams": [
+      3
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 4,
+  "fields": {
+    "names": "Michael Jordan",
+    "image": "https://static01.nyt.com/images/2020/05/16/business/16JORDAN-01sub/16JORDAN-01sub-superJumbo.jpg?quality=75&auto=webp",
+    "description": "Michael Jeffrey Jordan, also known by his initials MJ, is an American businessman and former professional basketball player. He played fifteen seasons in the National Basketball Association, winning six NBA championships with the Chicago Bulls.",
+    "retired": true,
+    "age": "59",
+    "teams": [
+      5
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 5,
+  "fields": {
+    "names": "Kareem Abdul-Jabbar",
+    "image": "https://cdn.nba.com/manage/2021/07/kareem-sky-hook-vs-knicks-archived.jpg",
+    "description": "During his career as a center, Abdul-Jabbar was a record six-time NBA Most Valuable Player (MVP), a record 19-time NBA All-Star, a 15-time All-NBA Team member, and an 11-time NBA All-Defensive Team member.",
+    "retired": true,
+    "age": "75",
+    "teams": [
+      3
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 6,
+  "fields": {
+    "names": "Mark Price",
+    "image": "https://img.bleacherreport.net/img/images/photos/002/931/565/hi-res-bddfc46b7e5b3b30020f1afcf7b06390_crop_north.jpg?1402452688&w=3072&h=2048",
+    "description": "Few players have ever been better at shooting the ball than Mark Price, who might have fared even better had he played a decade later in an era that more heavily promoted long-range attempts.  Nonetheless, he shot 47.2 percent from the field throughout his career and joins Steve Nash as one of only two qualified players in NBA history who made both 40 percent of their triples and 90 percent of their freebies. Plus, he's a member of the 50-40-90 club, working his way in during the 1987-88 season.",
+    "retired": true,
+    "age": "58",
+    "teams": [
+      1
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 7,
+  "fields": {
+    "names": "Tim Hardaway",
+    "image": "https://www.nba.com/warriors/sites/warriors/files/hardaway-1280-3.jpg?w=756&h=425",
+    "description": "A crossover virtuoso, Tim Hardaway—no, not the Tim Hardaway Jr. currently playing with the New York Knicks—was remarkably difficult to stay in front of during his prime. He could dazzle with his dribbles and use his speed to work his way past almost every defender.   Much like Mark Price, this point guard had trouble advancing deep into the postseason, but he had the advantage of having a more well-rounded game. Not only was he more valuable to his teams than our No. 11 player, but he achieved that level of value in different ways.",
+    "retired": true,
+    "age": "55",
+    "teams": [
+      1,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 8,
+  "fields": {
+    "names": "Bill Russell",
+    "image": "https://media.gq.com/photos/5ec5937a5050fbe76451bd7e/master/pass/Bill%20Russell%20biography%20gq%20may%202020.jpg",
+    "description": "Bill Russell was never a dominant scorer, topping out at 18.9 points per game during the same 1961-62 seasons that saw Wilt Chamberlain post such pace-inflated numbers. And while his 47.1 true shooting percentage might seem remarkably low for a big man who wasn't a go-to scorer, it was a decent mark for the time. In that 1961-62 campaign, for example, the league average was 47.9 percent.   Of course, defense was Russell's speciality. He anchored some of the league's best point-preventing units of all time (by adjusted defensive efficiency, five of the top seven seasons in NBA history belonged to his Boston Celtics, including the entirety of the top four), and he changed how blocked shots were viewed. To this day, no one has been able to start fast breaks with rejections like Russell could throughout his career.",
+    "retired": true,
+    "age": "88 Years old",
+    "teams": [
+      8
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 9,
+  "fields": {
+    "names": "Tim Duncan",
+    "image": "https://cdn.vox-cdn.com/thumbor/XDMfzthYfwW5YY8NOx6giPMu5WQ=/0x0:594x368/1200x800/filters:focal(246x33:340x127)/cdn.vox-cdn.com/uploads/chorus_image/image/69241110/duncan.0.jpg",
+    "description": "Fundamental excellence has always been Duncan's calling card, and it's allowed him to submit one ridiculous season after another.   He's so much of an ageless wonder that he's spent parts of his 2014-15 season serving as a front-runner in the competitive race for Defensive Player of the Year, which is pretty much the only major honor he hasn't yet won during his spectacular career with the San Antonio Spurs. He's made the All-NBA and All-Defensive teams on countless occasions, dominated as a scorer, won MVP twice and filled up an entire hand with championship rings.   Consistent greatness is one thing, but what Duncan has done goes beyond that.",
+    "retired": true,
+    "age": "46",
+    "teams": [
+      9
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 10,
+  "fields": {
+    "names": "Magic Johnson",
+    "image": "https://cdn.britannica.com/27/189527-004-07C4AD40.jpg",
+    "description": "Though his career was cut short after he tested HIV positive, the legendary floor general has still left an indelible mark on the league, one that established him as one of the most creative offensive players in NBA history. Magic Johnson was never much of a shooter—or a scorer, for that matter—but his distributing prowess and work running the Showtime Lakers still allowed him to thrive on the offensive end of the floor.   Among all qualified point guards, Johnson leads the field in the following categories: Playoff Performance, Advancement Shares, assists per game, true shooting percentage (despite his lack of three-point range), total rebounding percentage, MVPs and MVP shares",
+    "retired": true,
+    "age": "62",
+    "teams": [
+      3
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 11,
+  "fields": {
+    "names": "Giannis Antetokounmpo",
+    "image": "https://static01.nyt.com/images/2021/08/10/sports/10nba-giannis1-print/10nba-giannis-excerpt-hands-mobileMasterAt3x.jpg",
+    "description": "In 2011, he began playing for the club's senior team before entering the 2013 NBA draft, where he was selected 15th overall by the Bucks. In 2016–17 he led the Bucks in all five major statistical categories and became the first player in NBA history to finish a regular season in the top 20 in all five statistics of total points, rebounds, assists, steals, and blocks.[5] He received the Most Improved Player award in 2017. Antetokounmpo has received six All-Star selections, including being selected as an All-Star captain in 2019 and 2020, as he led the Eastern Conference in voting in these two years.",
+    "retired": false,
+    "age": "27 years old",
+    "teams": [
+      10
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 12,
+  "fields": {
+    "names": "Jayson Tatum",
+    "image": "https://e0.365dm.com/22/06/2048x1152/skysports-jayson-tatum-boston-celtics_5801212.jpg",
+    "description": "A three-time NBA All-Star, Tatum was named the NBA Eastern Conference Finals Most Valuable Player (MVP) in 2022. He also won a gold medal on the 2020 U.S. Olympic team in Tokyo.",
+    "retired": false,
+    "age": "24 year",
+    "teams": [
+      8
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 13,
+  "fields": {
+    "names": "Klay thompson",
+    "image": "https://cdn.nba.com/manage/2022/06/klay-six-1920-220601-1568x882.jpg",
+    "description": "Klay Alexander Thompson is an American professional basketball player for the Golden State Warriors of the National Basketball Association. He is regarded as one of the greatest shooters in NBA history",
+    "retired": false,
+    "age": "32 years",
+    "teams": [
+      1
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 14,
+  "fields": {
+    "names": "Kyrie Irving",
+    "image": "https://deadline.com/wp-content/uploads/2021/10/Kyrie-Irving.jpg",
+    "description": "Kyrie Andrew Irving is an American professional basketball player for the Brooklyn Nets of the National Basketball Association. He was named the Rookie of the Year after being selected by the Cleveland Cavaliers with the first overall pick in the 2011 NBA draft.",
+    "retired": false,
+    "age": "30 years",
+    "teams": [
+      11,
+      12,
+      13
+    ]
+  }
+},
+{
+  "model": "basketball.basketball",
+  "pk": 15,
+  "fields": {
+    "names": "Marcus Smart",
+    "image": "https://www.nbcsports.com/sites/nbcsports.com/files/2022/06/02/nbc_bfa_marcussmart_220602.jpg",
+    "description": "Marcus Osmond Smart is an American professional basketball player for the Boston Celtics of the National Basketball Association. Smart played college basketball for the Oklahoma State Cowboys before being drafted with the sixth overall pick in the 2014 NBA draft.",
+    "retired": false,
+    "age": "28 years",
+    "teams": [
+      8
+    ]
+  }
+}
+]
