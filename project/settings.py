@@ -15,10 +15,6 @@ import os
 from pathlib import Path
 import django_on_heroku
 
-# all the rest of the settings file...
-
-django_on_heroku.settings(locals())  # put this last
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
