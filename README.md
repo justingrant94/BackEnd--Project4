@@ -82,6 +82,7 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
  <img width="287" alt="Screenshot 2022-06-21 at 14 02 46" src="https://user-images.githubusercontent.com/73545574/175280896-96419496-dc3e-4df4-9bbb-796ba698e3c8.png">
  
  <img width="375" alt="Screenshot 2022-06-21 at 14 02 55" src="https://user-images.githubusercontent.com/73545574/175280928-6a36aa00-31d4-42b5-ba57-70afb7337ce7.png">
+ 
 **Challenges:**
  
 **1.** My first challenge was allowing the user to register and then not having to log in again - which I never managed to overcome due to the deadline fast approaching, which left me quite puzzled. - that is something that I am looking to rectify in the near future. 
