@@ -8,6 +8,7 @@ The final project on the SEI course. In a team of four we had 1 week to create a
 <img width="1511" alt="Screenshot 2022-06-21 at 13 28 19" src="https://user-images.githubusercontent.com/73545574/175279438-27ecc878-bb65-46d4-bd8b-77ba12c32e9c.png">
 
 **Brief**
+
 **1.** Build a full-stack application - by making your own backend and your own front-end.
 **2.** Use a Python Django API using Django REST Framework to serve your data from an SQL database.
 **3.** Consume your API with a separate front-end built with React.
