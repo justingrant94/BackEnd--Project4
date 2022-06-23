@@ -33,11 +33,11 @@ The final project on the SEI course. In a team of four we had 1 week to create a
 <!-- Dev Tools
  -->
  
-1. Git
-2. GitHub
-3. VScode
-4. Insomnia
-5. TablePlus
+**1.** Git
+**2.** GitHub
+**3.** VScode
+**4.** Insomnia
+**5.** TablePlus
 
 **Process**
 
