@@ -3,7 +3,7 @@ A Full Stack project as a team of four with a 1 week deadline.
 
 **Best In The Game**
 
-The final project on the SEI course. In a team of four we had 1 week to create a Full Stack app, the backend was built with Django and Python, the front end was React.js
+The final project on the SEI course. I had 1 week to create a Full Stack app, the backend was built with Django and Python, the front end was React.js
 
 <img width="1511" alt="Screenshot 2022-06-21 at 13 28 19" src="https://user-images.githubusercontent.com/73545574/175279438-27ecc878-bb65-46d4-bd8b-77ba12c32e9c.png">
 
