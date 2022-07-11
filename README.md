@@ -9,9 +9,9 @@ The final project on the SEI course. In a team of four we had 1 week to create a
 
 **Brief**
 
-**1.** Build a full-stack application - by making your own backend and your own front-end.
+**1.** Build a full-stack application - by making your own backend and your own frontend.
 **2.** Use a Python Django API using Django REST Framework to serve your data from an SQL database.
-**3.** Consume your API with a separate front-end built with React.
+**3.** Consume your API with a separate frontend built with React.
 **4.** Create a MERN app & ensure there is CRUD functionality.
 **5.** Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut.
 **6.** Have a visually impressive design.
@@ -53,13 +53,15 @@ I also created a virtual whiteboard using Excalidraw, this enables me to create 
 
 **Backend**
 
-Covering the backend first, i wanted to create the registerView, login view and also the Authentication.
+Covering the backend first, I wanted to create the registerView, login view and also the Authentication.
 
 <img width="596" alt="Screenshot 2022-06-21 at 13 47 04" src="https://user-images.githubusercontent.com/73545574/175280405-ca439291-da8b-4af5-905d-ab5314a17362.png">
 
 <img width="366" alt="Screenshot 2022-06-21 at 13 48 15" src="https://user-images.githubusercontent.com/73545574/175280442-7edfdedf-9ef3-4f0e-97af-7225b0e920d4.png">
 
-I also spent some time adding dummy data to our seeds, this is so when you clock onto the site there are plenty of basketballers that the user can feel, which was vital for me to do as it gave the site a real genuine feel. Example:
+I also spent some time adding dummy data to our seeds, this is so when you click onto the site there are plenty of basketballers that the user can see, which was vital for me to do as it gave the site a real genuine feel.
+
+**Example:**
 
 <img width="875" alt="Screenshot 2022-06-21 at 13 50 11" src="https://user-images.githubusercontent.com/73545574/175280545-0a476838-8f5a-40da-83a5-c504e8051780.png">
 
@@ -78,20 +80,20 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 **Commenting on favorite players:**
  
- I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player.
- 
+I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player.
+
  <img width="287" alt="Screenshot 2022-06-21 at 14 02 46" src="https://user-images.githubusercontent.com/73545574/175280896-96419496-dc3e-4df4-9bbb-796ba698e3c8.png">
  
  <img width="375" alt="Screenshot 2022-06-21 at 14 02 55" src="https://user-images.githubusercontent.com/73545574/175280928-6a36aa00-31d4-42b5-ba57-70afb7337ce7.png">
  
 **Challenges:**
  
-**1.** My first challenge was allowing the user to register and then not having to log in again - which I never managed to overcome due to the deadline fast approaching, which left me quite puzzled. - that is something that I am looking to rectify in the near future. 
+**1.** My first challenge was allowing the user to register and then not having to log in again - which I never managed to overcome due to the deadline fast approaching, which left me quite puzzled. - That is something that I am looking to rectify in the near future.  
 **2.** Working with reactBootstrap for the first time on my own, I got off to a slow start which I struggled with for a little time. However, after taking a break and creating a map of what I want to achieve and just playing around with it, I managed to get it to work with the way I envisioned it to look to a certain extent. 
 
 **Bugs**
  
-1. The authenticated user is unable to delete their comment which i was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments cant be deleted on the front end.
+1. The authenticated user is unable to delete their comment which i was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
 
 **Future Improvements**
  
@@ -105,7 +107,7 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 **2.** Stepping away and taking a break is sometimes the perfect remedy to overcoming a block, as many of the time I would find myself glued to my desk completely puzzling myself.
 
-**3.** Really pleased with how clean the app looks, as I was quite skeptical in the beginning as I thought maybe I may have bit off more than i can chew.
+**3.**  Really pleased with how clean the app looks, as I was quite sceptical in the beginning as I thought maybe I may have bit off more than I can chew.
 
 
 
