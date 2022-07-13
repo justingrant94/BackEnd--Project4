@@ -116,8 +116,11 @@ I wanted to allow the users that have registered to only be able to leave commen
 **Future Improvements:**
  
 **1.** Bug fixes.
+
 **2.** Search functionality for players.
+
 **3.** Filters for teams so you can search for the greatest players.
+
 **4.** Now that I understand the different http error codes, I would like to make my own custom errors.
 
 **Wins & Key Learnings**
