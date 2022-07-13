@@ -65,6 +65,13 @@ I also spent some time adding dummy data to our seeds, this is so when you click
 
 **Example:**
 
+Below I wanted to try and create as much information on the player as possible. I created whether or not the player is still active in the NBA so once you click onto the player you would get a deeper insight into the player being their age and description.
+
+I spent time adding in dummy data to our seeds, this is so when you click onto the site there are plenty of players already on show which gives the website a real genuine feel. Example:
+
+<img width="513" alt="Screenshot 2022-07-13 at 14 13 27" src="https://user-images.githubusercontent.com/73545574/178742010-e232180e-ddc0-4863-88ed-4fac2f3b96bc.png">
+
+
 <img width="875" alt="Screenshot 2022-06-21 at 13 50 11" src="https://user-images.githubusercontent.com/73545574/175280545-0a476838-8f5a-40da-83a5-c504e8051780.png">
 
 **Frontend**
