@@ -30,9 +30,13 @@ With the landing page being a compilation of some of the best basketball plays t
 **Frontend:**
 
 **1.** React.js
+
 **2.** JSX
+
 **3.** CSS and Sass
+
 **4.** React BootStrap
+
 **5.** Axios
 
 **Backend:**
@@ -42,9 +46,13 @@ With the landing page being a compilation of some of the best basketball plays t
 <!-- Dev Tools-->
  
 **1.** Git
+
 **2.** GitHub
+
 **3.** VScode
+
 **4.** Insomnia
+
 **5.** TablePlus
 
 **Deployment:**
