@@ -83,7 +83,12 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 **Commenting on favorite players:**
  
-I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player.
+I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player, so ultimately the user has come across a player that they really like they can essentially add a comment on the basktball players page, which I also incoporated the error handling to understad if it doesn't why that also is.
+
+<img width="518" alt="Screenshot 2022-07-13 at 14 06 58" src="https://user-images.githubusercontent.com/73545574/178740687-8b8626e3-14a2-4e90-8315-8f066b0b022c.png">
+
+
+<img width="1111" alt="Screenshot 2022-07-13 at 14 06 24" src="https://user-images.githubusercontent.com/73545574/178740601-c68b7cb1-f1f5-475b-aa17-0976805f0fa8.png">
 
  <img width="287" alt="Screenshot 2022-06-21 at 14 02 46" src="https://user-images.githubusercontent.com/73545574/175280896-96419496-dc3e-4df4-9bbb-796ba698e3c8.png">
  
@@ -105,6 +110,7 @@ I wanted to allow the users that have registered to only be able to leave commen
 **1.** Bug fixes.
 **2.** Search functionality for players.
 **3.** Filters for teams so you can search for the greatest players.
+**4.** Now that I understand the different http error codes, I would like to make my own custom errors.
 
 **Wins & Key Learnings**
  
