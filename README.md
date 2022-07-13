@@ -123,7 +123,7 @@ I wanted to allow the users that have registered to only be able to leave commen
 
 **4.** Now that I understand the different http error codes, I would like to make my own custom errors.
 
-**Wins & Key Learnings**
+**Wins & Key Learnings:**
  
 **1.** This project reinforced my understanding of axios and django like no other project. I think being in control from start to finish enabled me to understand why I would use certain elements and what happens if it is used incorrectly.
 
