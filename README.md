@@ -105,7 +105,9 @@ I wanted to allow the users that have registered to only be able to leave commen
 **Challenges:**
  
 **1.** My first challenge was allowing the user to register and then not having to log in again - which I never managed to overcome due to the deadline fast approaching, which left me quite puzzled. - That is something that I am looking to rectify in the near future.  
+
 **2.** Working with reactBootstrap for the first time on my own, I got off to a slow start which I struggled with for a little time. However, after taking a break and creating a map of what I want to achieve and just playing around with it, I managed to get it to work with the way I envisioned it to look to a certain extent. 
+
 **3.** My main challenges were enabling the user to delete their comments. 
 
 **Bugs:**
