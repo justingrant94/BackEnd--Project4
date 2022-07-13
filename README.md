@@ -9,7 +9,7 @@ With the landing page being a compilation of some of the best basketball plays t
 
 <img width="1511" alt="Screenshot 2022-06-21 at 13 28 19" src="https://user-images.githubusercontent.com/73545574/175279438-27ecc878-bb65-46d4-bd8b-77ba12c32e9c.png">
 
-**Brief**
+**Brief:**
 
 **1.** Build a full-stack application - by making your own backend and your own frontend.
 **2.** Use a Python Django API using Django REST Framework to serve your data from an SQL database.
@@ -19,7 +19,7 @@ With the landing page being a compilation of some of the best basketball plays t
 **6.** Have a visually impressive design.
 **7.** Be deployed online so it's publicly accessible.
 
-**Built With**
+**Built With:**
 
 **Frontend:**
 
@@ -41,10 +41,10 @@ With the landing page being a compilation of some of the best basketball plays t
 **4.** Insomnia
 **5.** TablePlus
 
-**Deployment**
+**Deployment:**
 The app is deployed on ....and can be found here.
 
-**Process**
+**Process:**
 
 For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. I created an ERD diagram and used this to visually display our model relationships in the backend.
 
@@ -54,7 +54,7 @@ I also created a virtual whiteboard using Excalidraw, this enables me to create 
 
 <img width="1234" alt="Screenshot 2022-06-21 at 13 43 53" src="https://user-images.githubusercontent.com/73545574/175280325-a25616e0-c0b3-4268-9158-c11d9d404071.png">
 
-**Backend**
+**Backend:**
 
 Covering the backend first, I wanted to create the registerView, login view and also the Authentication.
 
@@ -75,7 +75,7 @@ I spent time adding in dummy data to our seeds, this is so when you click onto t
 
 <img width="875" alt="Screenshot 2022-06-21 at 13 50 11" src="https://user-images.githubusercontent.com/73545574/175280545-0a476838-8f5a-40da-83a5-c504e8051780.png">
 
-**Frontend**
+**Frontend:**
 
 Once the backend was completed and working within insomnia, I linked it to the frontend and started building. Again, this was a daunting task and quite exciting as I really wanted the final product to be quite impressive but at the same time I had to be quite realistic as this was my first time creating a full stack site.
 I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this. For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that i created the HomePage first, I thought of cloning the NBA website but once I gave it deep thought I wanted to create the website in my own way.
@@ -85,7 +85,7 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 <img width="524" alt="Screenshot 2022-06-21 at 13 57 08" src="https://user-images.githubusercontent.com/73545574/175280689-38e5a805-d7e3-44af-a8fa-0ec2d809df40.png">
 
-**Regsiter/Login**
+**Regsiter/Login:**
 
 <img width="514" alt="Screenshot 2022-06-21 at 13 58 29" src="https://user-images.githubusercontent.com/73545574/175280747-7ca1e896-fa69-41d3-a60c-b793d874da86.png">
 
@@ -108,12 +108,12 @@ I wanted to allow the users that have registered to only be able to leave commen
 **2.** Working with reactBootstrap for the first time on my own, I got off to a slow start which I struggled with for a little time. However, after taking a break and creating a map of what I want to achieve and just playing around with it, I managed to get it to work with the way I envisioned it to look to a certain extent. 
 **3.** My main challenges were enabling the user to delete their comments. 
 
-**Bugs**
+**Bugs:**
  
 1. The authenticated user is unable to delete their comment which i was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
 2. Once the user has registered they still need to login as appose to already being logged in. 
 
-**Future Improvements**
+**Future Improvements:**
  
 **1.** Bug fixes.
 **2.** Search functionality for players.
