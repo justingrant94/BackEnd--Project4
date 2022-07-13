@@ -3,7 +3,9 @@ A Full Stack project as a team of four with a 1 week deadline.
 
 **Best In The Game**
 
-The final project on the SEI course. I had 1 week to create a Full Stack app, the backend was built with Django and Python, the front end was React.js
+The final project on the SEI course. I had 1 week to create a Full Stack app, the backend was built with Django and Python, the frontend was React.js
+
+With the landing page being a compilation of some of the best basketball plays that has taken place in the NBA.
 
 <img width="1511" alt="Screenshot 2022-06-21 at 13 28 19" src="https://user-images.githubusercontent.com/73545574/175279438-27ecc878-bb65-46d4-bd8b-77ba12c32e9c.png">
 
@@ -31,8 +33,7 @@ The final project on the SEI course. I had 1 week to create a Full Stack app, th
 <!-- Python -->
 <!-- Django -->
 
-<!-- Dev Tools
- -->
+<!-- Dev Tools-->
  
 **1.** Git
 **2.** GitHub
@@ -40,12 +41,14 @@ The final project on the SEI course. I had 1 week to create a Full Stack app, th
 **4.** Insomnia
 **5.** TablePlus
 
+**Deployment**
+The app is deployed on ....and can be found here.
+
 **Process**
 
-For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. 
-I created an ERD diagram and used this to visually display our model relationships in the backend.
+For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. I created an ERD diagram and used this to visually display our model relationships in the backend.
 
-I also created a virtual whiteboard using Excalidraw, this enables me to create the visuals on how I would like the page to look, adding notes, endpoints, and how each page will look. 
+I also created a virtual whiteboard using Excalidraw, this enables me to create the visuals on how I would like the page to look, adding notes, endpoints, and how each page will look.
 
 <img width="1223" alt="Screenshot 2022-06-21 at 13 36 38" src="https://user-images.githubusercontent.com/73545574/175280271-ecf042b8-64c3-476b-b22a-3052d0ec075d.png">
 
@@ -53,7 +56,7 @@ I also created a virtual whiteboard using Excalidraw, this enables me to create 
 
 **Backend**
 
-Covering the backend first, I wanted to create the registerView, login view and also the Authentication. 
+Covering the backend first, I wanted to create the registerView, login view and also the Authentication.
 
 <img width="596" alt="Screenshot 2022-06-21 at 13 47 04" src="https://user-images.githubusercontent.com/73545574/175280405-ca439291-da8b-4af5-905d-ab5314a17362.png">
 
@@ -64,8 +67,8 @@ I also spent some time adding dummy data to our seeds, this is so when you click
 **Example:**
 
 Below I wanted to try and create as much information on the player as possible. I created whether or not the player is still active in the NBA so once you click onto the player you would get a deeper insight into the player being their age and description.
-
 I spent time adding in dummy data to our seeds, this is so when you click onto the site there are plenty of players already on show which gives the website a real genuine feel. Example:
+
 
 <img width="513" alt="Screenshot 2022-07-13 at 14 13 27" src="https://user-images.githubusercontent.com/73545574/178742010-e232180e-ddc0-4863-88ed-4fac2f3b96bc.png">
 
@@ -74,8 +77,8 @@ I spent time adding in dummy data to our seeds, this is so when you click onto t
 
 **Frontend**
 
-Once the backend was completed and working within insomnia, I linked it to the frontend and started building. Again, this was a daunting task and quite exciting as I really wanted the final product to be quite impressive but at the same time I had to be quite realistic as this was my first time creating a full stack site. I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this.
-For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that i created the HomePage first, I thought of cloning the NBA website but once i gave it deep thought I wanted to create the website in my own way.
+Once the backend was completed and working within insomnia, I linked it to the frontend and started building. Again, this was a daunting task and quite exciting as I really wanted the final product to be quite impressive but at the same time I had to be quite realistic as this was my first time creating a full stack site.
+I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this. For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that i created the HomePage first, I thought of cloning the NBA website but once I gave it deep thought I wanted to create the website in my own way.
 
  
 Here is a snippet to show  the conditional formatting, checking to see if the user is logged in.
@@ -88,7 +91,7 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 **Commenting on favorite players:**
  
-I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player, so ultimately the user has come across a player that they really like they can essentially add a comment on the basktball players page, which I also incoporated the error handling to understad if it doesn't why that also is.
+I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player, so ultimately the user has come across a player that they really like they can essentially add a comment on the basketball players page, which I also incorporated the error handling to understand if it doesn't why that also is.
 
 <img width="518" alt="Screenshot 2022-07-13 at 14 06 58" src="https://user-images.githubusercontent.com/73545574/178740687-8b8626e3-14a2-4e90-8315-8f066b0b022c.png">
 
