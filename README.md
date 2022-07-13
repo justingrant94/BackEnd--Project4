@@ -99,7 +99,7 @@ Here is a snippet to show  the conditional formatting, checking to see if the us
 
 <img width="524" alt="Screenshot 2022-06-21 at 13 57 08" src="https://user-images.githubusercontent.com/73545574/175280689-38e5a805-d7e3-44af-a8fa-0ec2d809df40.png">
 
-**Regsiter/Login:**
+**Register/Login:**
 
 <img width="514" alt="Screenshot 2022-06-21 at 13 58 29" src="https://user-images.githubusercontent.com/73545574/175280747-7ca1e896-fa69-41d3-a60c-b793d874da86.png">
 
