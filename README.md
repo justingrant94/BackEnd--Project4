@@ -53,7 +53,9 @@ I also created a virtual whiteboard using Excalidraw, this enables me to create 
 
 **Backend**
 
-Covering the backend first, I wanted to create the registerView, login view and also the Authentication.
+Covering the backend first, I wanted to create the registerView, login view and also the Authentication. 
+
+the developer which was coding would share their screen, allowing all the other team mates to watch as they coded their chosen section. Once each person had coded their part they would add, commit & push to a development branch, working this way allowed all members of the team to assist and guide each other when making the backend. My main focus was on creating the views for register and login as well as some authentication.
 
 <img width="596" alt="Screenshot 2022-06-21 at 13 47 04" src="https://user-images.githubusercontent.com/73545574/175280405-ca439291-da8b-4af5-905d-ab5314a17362.png">
 
