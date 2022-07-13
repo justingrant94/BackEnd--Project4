@@ -45,7 +45,7 @@ The final project on the SEI course. I had 1 week to create a Full Stack app, th
 For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. 
 I created an ERD diagram and used this to visually display our model relationships in the backend.
 
-I also created a virtual whiteboard using Excalidraw, this enables me to create the visuals on how i would like the page to look, adding notes, endpoints, and how each page will look. 
+I also created a virtual whiteboard using Excalidraw, this enables me to create the visuals on how I would like the page to look, adding notes, endpoints, and how each page will look. 
 
 <img width="1223" alt="Screenshot 2022-06-21 at 13 36 38" src="https://user-images.githubusercontent.com/73545574/175280271-ecf042b8-64c3-476b-b22a-3052d0ec075d.png">
 
@@ -54,8 +54,6 @@ I also created a virtual whiteboard using Excalidraw, this enables me to create 
 **Backend**
 
 Covering the backend first, I wanted to create the registerView, login view and also the Authentication. 
-
-the developer which was coding would share their screen, allowing all the other team mates to watch as they coded their chosen section. Once each person had coded their part they would add, commit & push to a development branch, working this way allowed all members of the team to assist and guide each other when making the backend. My main focus was on creating the views for register and login as well as some authentication.
 
 <img width="596" alt="Screenshot 2022-06-21 at 13 47 04" src="https://user-images.githubusercontent.com/73545574/175280405-ca439291-da8b-4af5-905d-ab5314a17362.png">
 
