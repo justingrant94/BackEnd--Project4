@@ -148,7 +148,7 @@ I wanted to allow the users that have registered to only be able to leave commen
 
 **2.** Stepping away and taking a break is sometimes the perfect remedy to overcoming a block, as many of the time I would find myself glued to my desk completely puzzling myself.
 
-**3.**  Really pleased with how clean the app looks, as I was quite sceptical in the beginning as I thought maybe I may have bit off more than I can chew.
+**3.**  Really pleased with how clean the app looks, as I was quite skeptical in the beginning as I thought maybe I may have bit off more than I can chew.
 
 
 
