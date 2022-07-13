@@ -128,7 +128,7 @@ I wanted to allow the users that have registered to only be able to leave commen
  
 **1.** The authenticated user is unable to delete their comment which i was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
 
-**2.** Once the user has registered they still need to login as appose to already being logged in. 
+**2.** Once the user has registered they still need to login as opposed to already being logged in. 
 
 **Future Improvements:**
  
