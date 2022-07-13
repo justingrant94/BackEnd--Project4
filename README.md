@@ -12,11 +12,17 @@ With the landing page being a compilation of some of the best basketball plays t
 **Brief:**
 
 **1.** Build a full-stack application - by making your own backend and your own frontend.
+
 **2.** Use a Python Django API using Django REST Framework to serve your data from an SQL database.
+
 **3.** Consume your API with a separate frontend built with React.
+
 **4.** Create a MERN app & ensure there is CRUD functionality.
+
 **5.** Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut.
+
 **6.** Have a visually impressive design.
+
 **7.** Be deployed online so it's publicly accessible.
 
 **Built With:**
