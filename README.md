@@ -92,7 +92,7 @@ I spent time adding in dummy data to our seeds, this is so when you click onto t
 **Frontend:**
 
 Once the backend was completed and working within insomnia, I linked it to the frontend and started building. Again, this was a daunting task and quite exciting as I really wanted the final product to be quite impressive but at the same time I had to be quite realistic as this was my first time creating a full stack site.
-I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this. For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that i created the HomePage first, I thought of cloning the NBA website but once I gave it deep thought I wanted to create the website in my own way.
+I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this. For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that I created the HomePage first, I thought of cloning the NBA website but once I gave it deep thought I wanted to create the website in my own way.
 
  
 Here is a snippet to show  the conditional formatting, checking to see if the user is logged in.
@@ -126,7 +126,7 @@ I wanted to allow the users that have registered to only be able to leave commen
 
 **Bugs:**
  
-**1.** The authenticated user is unable to delete their comment which i was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
+**1.** The authenticated user is unable to delete their comment which I was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
 
 **2.** Once the user has registered they still need to login as opposed to already being logged in. 
 
