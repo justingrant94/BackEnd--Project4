@@ -1,0 +1,1187 @@
+[
+  {
+    "model": "basketball.basketball",
+    "pk": 1,
+    "fields": {
+      "names": "Stephen Curry",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png",
+      "description": "Stephen Curry changed modern basketball with elite off-ball movement, deep shooting range and championship-level guard play for Golden State.",
+      "retired": false,
+      "age": "38",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "United States",
+      "career_start": 2009,
+      "championships": 4,
+      "mvps": 2,
+      "all_star_appearances": 10,
+      "teams": [1]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 2,
+    "fields": {
+      "names": "LeBron James",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png",
+      "description": "LeBron James is one of the most complete players in league history, combining scoring, playmaking, size and longevity at an elite level.",
+      "retired": false,
+      "age": "41",
+      "position": "Forward",
+      "height": "6 ft 9 in",
+      "nationality": "United States",
+      "career_start": 2003,
+      "championships": 4,
+      "mvps": 4,
+      "all_star_appearances": 21,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 3,
+    "fields": {
+      "names": "Kevin Durant",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201142.png",
+      "description": "Kevin Durant is a high-efficiency scoring forward with guard-like shooting touch, length and shot creation from every level of the floor.",
+      "retired": false,
+      "age": "37",
+      "position": "Forward",
+      "height": "6 ft 10 in",
+      "nationality": "United States",
+      "career_start": 2007,
+      "championships": 2,
+      "mvps": 1,
+      "all_star_appearances": 14,
+      "teams": [1, 11]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 4,
+    "fields": {
+      "names": "Michael Jordan",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/893.png",
+      "description": "Michael Jordan set the standard for two-way superstar dominance, winning six championships with Chicago and becoming one of sport's defining icons.",
+      "retired": true,
+      "age": "63",
+      "position": "Shooting Guard",
+      "height": "6 ft 6 in",
+      "nationality": "United States",
+      "career_start": 1984,
+      "career_end": 2003,
+      "hall_of_fame": true,
+      "championships": 6,
+      "mvps": 5,
+      "all_star_appearances": 14,
+      "teams": [5]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 5,
+    "fields": {
+      "names": "Kareem Abdul-Jabbar",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png",
+      "description": "Kareem Abdul-Jabbar paired unmatched longevity with the skyhook, becoming one of the greatest centers and scorers in basketball history.",
+      "retired": true,
+      "age": "79",
+      "position": "Center",
+      "height": "7 ft 2 in",
+      "nationality": "United States",
+      "career_start": 1969,
+      "career_end": 1989,
+      "hall_of_fame": true,
+      "championships": 6,
+      "mvps": 6,
+      "all_star_appearances": 19,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 6,
+    "fields": {
+      "names": "Kobe Bryant",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/977.png",
+      "description": "Kobe Bryant was a relentless shot creator and five-time champion whose footwork, scoring craft and competitiveness shaped a generation.",
+      "retired": true,
+      "age": "41",
+      "position": "Shooting Guard",
+      "height": "6 ft 6 in",
+      "nationality": "United States",
+      "career_start": 1996,
+      "career_end": 2016,
+      "hall_of_fame": true,
+      "championships": 5,
+      "mvps": 1,
+      "all_star_appearances": 18,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 7,
+    "fields": {
+      "names": "Shaquille O'Neal",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/406.png",
+      "description": "Shaquille O'Neal was one of the most physically dominant centers ever, overpowering defenses and anchoring multiple championship teams.",
+      "retired": true,
+      "age": "54",
+      "position": "Center",
+      "height": "7 ft 1 in",
+      "nationality": "United States",
+      "career_start": 1992,
+      "career_end": 2011,
+      "hall_of_fame": true,
+      "championships": 4,
+      "mvps": 1,
+      "all_star_appearances": 15,
+      "teams": [3, 6, 8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 8,
+    "fields": {
+      "names": "Bill Russell",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/78049.png",
+      "description": "Bill Russell was the defensive centerpiece of a Boston dynasty and remains the ultimate championship standard in NBA history.",
+      "retired": true,
+      "age": "88",
+      "position": "Center",
+      "height": "6 ft 10 in",
+      "nationality": "United States",
+      "career_start": 1956,
+      "career_end": 1969,
+      "hall_of_fame": true,
+      "championships": 11,
+      "mvps": 5,
+      "all_star_appearances": 12,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 9,
+    "fields": {
+      "names": "Tim Duncan",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1495.png",
+      "description": "Tim Duncan built a Hall of Fame career on defensive discipline, post skill and steady leadership for the San Antonio Spurs.",
+      "retired": true,
+      "age": "50",
+      "position": "Power Forward",
+      "height": "6 ft 11 in",
+      "nationality": "United States",
+      "career_start": 1997,
+      "career_end": 2016,
+      "hall_of_fame": true,
+      "championships": 5,
+      "mvps": 2,
+      "all_star_appearances": 15,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 10,
+    "fields": {
+      "names": "Magic Johnson",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png",
+      "description": "Magic Johnson redefined point guard size and creativity while leading the Showtime Lakers with elite passing and transition control.",
+      "retired": true,
+      "age": "66",
+      "position": "Point Guard",
+      "height": "6 ft 9 in",
+      "nationality": "United States",
+      "career_start": 1979,
+      "career_end": 1996,
+      "hall_of_fame": true,
+      "championships": 5,
+      "mvps": 3,
+      "all_star_appearances": 12,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 11,
+    "fields": {
+      "names": "Giannis Antetokounmpo",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203507.png",
+      "description": "Giannis Antetokounmpo is a powerful two-way forward whose rim pressure, transition speed and defense made him a franchise champion.",
+      "retired": false,
+      "age": "31",
+      "position": "Forward",
+      "height": "6 ft 11 in",
+      "nationality": "Greece",
+      "career_start": 2013,
+      "championships": 1,
+      "mvps": 2,
+      "all_star_appearances": 9,
+      "teams": [10]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 12,
+    "fields": {
+      "names": "Jayson Tatum",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628369.png",
+      "description": "Jayson Tatum is a polished scoring wing with three-level shot creation, defensive size and a central role in Boston's modern core.",
+      "retired": false,
+      "age": "28",
+      "position": "Forward",
+      "height": "6 ft 8 in",
+      "nationality": "United States",
+      "career_start": 2017,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 13,
+    "fields": {
+      "names": "Klay Thompson",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/202691.png",
+      "description": "Klay Thompson became one of the game's great movement shooters and a key two-way piece of Golden State's championship run.",
+      "retired": false,
+      "age": "36",
+      "position": "Shooting Guard",
+      "height": "6 ft 6 in",
+      "nationality": "United States",
+      "career_start": 2011,
+      "championships": 4,
+      "mvps": 0,
+      "all_star_appearances": 5,
+      "teams": [1]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 14,
+    "fields": {
+      "names": "Kyrie Irving",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/202681.png",
+      "description": "Kyrie Irving is known for elite ball handling, creative finishing and difficult shot-making from the guard position.",
+      "retired": false,
+      "age": "34",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "United States",
+      "career_start": 2011,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 8,
+      "teams": [11, 12, 13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 15,
+    "fields": {
+      "names": "Marcus Smart",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203935.png",
+      "description": "Marcus Smart built his reputation on point-of-attack defense, toughness and connective guard play.",
+      "retired": false,
+      "age": "32",
+      "position": "Guard",
+      "height": "6 ft 3 in",
+      "nationality": "United States",
+      "career_start": 2014,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 0,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 16,
+    "fields": {
+      "names": "Nikola Jokic",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png",
+      "description": "Nikola Jokic is a playmaking center with elite passing vision, scoring touch and one of the most efficient offensive games ever seen from a big man.",
+      "retired": false,
+      "age": "31",
+      "position": "Center",
+      "height": "6 ft 11 in",
+      "nationality": "Serbia",
+      "career_start": 2015,
+      "championships": 1,
+      "mvps": 3,
+      "all_star_appearances": 7,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 17,
+    "fields": {
+      "names": "Luka Doncic",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629029.png",
+      "description": "Luka Doncic is a jumbo creator who controls pace, manipulates defenses and produces elite scoring and passing volume.",
+      "retired": false,
+      "age": "27",
+      "position": "Guard",
+      "height": "6 ft 7 in",
+      "nationality": "Slovenia",
+      "career_start": 2018,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 18,
+    "fields": {
+      "names": "Joel Embiid",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203954.png",
+      "description": "Joel Embiid combines center size with face-up scoring, rim protection and foul-drawing pressure as a dominant interior force.",
+      "retired": false,
+      "age": "32",
+      "position": "Center",
+      "height": "7 ft 0 in",
+      "nationality": "Cameroon",
+      "career_start": 2016,
+      "championships": 0,
+      "mvps": 1,
+      "all_star_appearances": 7,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 19,
+    "fields": {
+      "names": "James Harden",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201935.png",
+      "description": "James Harden became one of the league's most productive isolation scorers and pick-and-roll playmakers.",
+      "retired": false,
+      "age": "36",
+      "position": "Guard",
+      "height": "6 ft 5 in",
+      "nationality": "United States",
+      "career_start": 2009,
+      "championships": 0,
+      "mvps": 1,
+      "all_star_appearances": 10,
+      "teams": [13, 11]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 20,
+    "fields": {
+      "names": "Russell Westbrook",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201566.png",
+      "description": "Russell Westbrook is an explosive guard whose speed, rebounding and relentless rim pressure made him a triple-double machine.",
+      "retired": false,
+      "age": "37",
+      "position": "Point Guard",
+      "height": "6 ft 3 in",
+      "nationality": "United States",
+      "career_start": 2008,
+      "championships": 0,
+      "mvps": 1,
+      "all_star_appearances": 9,
+      "teams": [3, 13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 21,
+    "fields": {
+      "names": "Chris Paul",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png",
+      "description": "Chris Paul is one of the best traditional point guards ever, known for control, passing precision, midrange scoring and defensive pressure.",
+      "retired": false,
+      "age": "41",
+      "position": "Point Guard",
+      "height": "6 ft 0 in",
+      "nationality": "United States",
+      "career_start": 2005,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 12,
+      "teams": [1, 13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 22,
+    "fields": {
+      "names": "Kawhi Leonard",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/202695.png",
+      "description": "Kawhi Leonard is a two-way wing known for elite perimeter defense, controlled scoring and playoff shot-making.",
+      "retired": false,
+      "age": "35",
+      "position": "Forward",
+      "height": "6 ft 7 in",
+      "nationality": "United States",
+      "career_start": 2011,
+      "championships": 2,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [9, 13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 23,
+    "fields": {
+      "names": "Anthony Davis",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203076.png",
+      "description": "Anthony Davis is a versatile defensive anchor and efficient frontcourt scorer with guard-like mobility for his size.",
+      "retired": false,
+      "age": "33",
+      "position": "Forward-Center",
+      "height": "6 ft 10 in",
+      "nationality": "United States",
+      "career_start": 2012,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 9,
+      "teams": [3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 24,
+    "fields": {
+      "names": "Damian Lillard",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203081.png",
+      "description": "Damian Lillard is a deep-range scoring guard with elite late-game shot-making and pick-and-roll command.",
+      "retired": false,
+      "age": "35",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "United States",
+      "career_start": 2012,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 8,
+      "teams": [10]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 25,
+    "fields": {
+      "names": "Jimmy Butler",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/202710.png",
+      "description": "Jimmy Butler is a physical two-way wing whose playoff scoring, defense and competitiveness have powered deep postseason runs.",
+      "retired": false,
+      "age": "36",
+      "position": "Forward",
+      "height": "6 ft 7 in",
+      "nationality": "United States",
+      "career_start": 2011,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [6]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 26,
+    "fields": {
+      "names": "Devin Booker",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1626164.png",
+      "description": "Devin Booker is a smooth scoring guard with three-level touch, improved playmaking and high-volume offensive responsibility.",
+      "retired": false,
+      "age": "29",
+      "position": "Shooting Guard",
+      "height": "6 ft 5 in",
+      "nationality": "United States",
+      "career_start": 2015,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 4,
+      "teams": [11]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 27,
+    "fields": {
+      "names": "Anthony Edwards",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1630162.png",
+      "description": "Anthony Edwards is an explosive scoring guard with powerful rim attacks, confident shot-making and growing defensive impact.",
+      "retired": false,
+      "age": "24",
+      "position": "Shooting Guard",
+      "height": "6 ft 4 in",
+      "nationality": "United States",
+      "career_start": 2020,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 28,
+    "fields": {
+      "names": "Ja Morant",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629630.png",
+      "description": "Ja Morant is a dynamic point guard whose burst, vertical athleticism and passing creativity make him one of the league's most exciting creators.",
+      "retired": false,
+      "age": "26",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "United States",
+      "career_start": 2019,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 2,
+      "teams": [10]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 29,
+    "fields": {
+      "names": "Shai Gilgeous-Alexander",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628983.png",
+      "description": "Shai Gilgeous-Alexander is a crafty scoring guard who uses pace, footwork and touch to create efficient offense.",
+      "retired": false,
+      "age": "27",
+      "position": "Guard",
+      "height": "6 ft 6 in",
+      "nationality": "Canada",
+      "career_start": 2018,
+      "championships": 0,
+      "mvps": 1,
+      "all_star_appearances": 3,
+      "teams": [13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 30,
+    "fields": {
+      "names": "Victor Wembanyama",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1641705.png",
+      "description": "Victor Wembanyama is a rare two-way big with towering size, shot-blocking range, ball skill and perimeter shooting upside.",
+      "retired": false,
+      "age": "22",
+      "position": "Center",
+      "height": "7 ft 4 in",
+      "nationality": "France",
+      "career_start": 2023,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 1,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 31,
+    "fields": {
+      "names": "Zion Williamson",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629627.png",
+      "description": "Zion Williamson is a powerful forward whose strength, touch and explosiveness make him a unique interior scorer.",
+      "retired": false,
+      "age": "25",
+      "position": "Forward",
+      "height": "6 ft 6 in",
+      "nationality": "United States",
+      "career_start": 2019,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 2,
+      "teams": [7]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 32,
+    "fields": {
+      "names": "Trae Young",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1629027.png",
+      "description": "Trae Young is a high-volume offensive guard with deep shooting range, advanced passing reads and strong pick-and-roll production.",
+      "retired": false,
+      "age": "27",
+      "position": "Point Guard",
+      "height": "6 ft 1 in",
+      "nationality": "United States",
+      "career_start": 2018,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 33,
+    "fields": {
+      "names": "Donovan Mitchell",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628378.png",
+      "description": "Donovan Mitchell is an explosive scoring guard who blends downhill pressure, pull-up shooting and postseason shot creation.",
+      "retired": false,
+      "age": "29",
+      "position": "Guard",
+      "height": "6 ft 3 in",
+      "nationality": "United States",
+      "career_start": 2017,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [12]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 34,
+    "fields": {
+      "names": "Jaylen Brown",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1627759.png",
+      "description": "Jaylen Brown is a strong two-way wing who attacks the rim, defends multiple positions and scores efficiently in transition.",
+      "retired": false,
+      "age": "29",
+      "position": "Forward",
+      "height": "6 ft 6 in",
+      "nationality": "United States",
+      "career_start": 2016,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 4,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 35,
+    "fields": {
+      "names": "Jalen Brunson",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628973.png",
+      "description": "Jalen Brunson is a poised scoring guard with elite footwork, balance and craft in the midrange and paint.",
+      "retired": false,
+      "age": "29",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "United States",
+      "career_start": 2018,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 2,
+      "teams": [12]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 36,
+    "fields": {
+      "names": "Tyrese Haliburton",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1630169.png",
+      "description": "Tyrese Haliburton is a tall playmaking guard with quick decisions, efficient shooting and creative passing angles.",
+      "retired": false,
+      "age": "25",
+      "position": "Point Guard",
+      "height": "6 ft 5 in",
+      "nationality": "United States",
+      "career_start": 2020,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 2,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 37,
+    "fields": {
+      "names": "De'Aaron Fox",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628368.png",
+      "description": "De'Aaron Fox is one of the league's fastest guards, using speed, touch and clutch scoring to pressure defenses.",
+      "retired": false,
+      "age": "28",
+      "position": "Point Guard",
+      "height": "6 ft 3 in",
+      "nationality": "United States",
+      "career_start": 2017,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 1,
+      "teams": [1]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 38,
+    "fields": {
+      "names": "Bam Adebayo",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1628389.png",
+      "description": "Bam Adebayo is a switchable defensive center with passing feel, screening value and strong interior finishing.",
+      "retired": false,
+      "age": "28",
+      "position": "Center",
+      "height": "6 ft 9 in",
+      "nationality": "United States",
+      "career_start": 2017,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [6]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 39,
+    "fields": {
+      "names": "Domantas Sabonis",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1627734.png",
+      "description": "Domantas Sabonis is a skilled frontcourt hub who rebounds, screens, passes and scores efficiently near the basket.",
+      "retired": false,
+      "age": "29",
+      "position": "Forward-Center",
+      "height": "6 ft 10 in",
+      "nationality": "Lithuania",
+      "career_start": 2016,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [1]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 40,
+    "fields": {
+      "names": "Rudy Gobert",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203497.png",
+      "description": "Rudy Gobert is an elite rim protector whose size, screening and defensive positioning shape team identity.",
+      "retired": false,
+      "age": "33",
+      "position": "Center",
+      "height": "7 ft 1 in",
+      "nationality": "France",
+      "career_start": 2013,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 41,
+    "fields": {
+      "names": "Karl-Anthony Towns",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1626157.png",
+      "description": "Karl-Anthony Towns is a skilled shooting big whose spacing, scoring and rebounding give frontcourts unusual offensive range.",
+      "retired": false,
+      "age": "30",
+      "position": "Center",
+      "height": "7 ft 0 in",
+      "nationality": "Dominican Republic",
+      "career_start": 2015,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 4,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 42,
+    "fields": {
+      "names": "Paul George",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/202331.png",
+      "description": "Paul George is a smooth two-way wing with high-level shooting, ball handling and perimeter defense.",
+      "retired": false,
+      "age": "35",
+      "position": "Forward",
+      "height": "6 ft 8 in",
+      "nationality": "United States",
+      "career_start": 2010,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 9,
+      "teams": [13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 43,
+    "fields": {
+      "names": "Bradley Beal",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/203078.png",
+      "description": "Bradley Beal is a polished scoring guard with shooting touch, off-ball movement and years of primary creator experience.",
+      "retired": false,
+      "age": "32",
+      "position": "Guard",
+      "height": "6 ft 4 in",
+      "nationality": "United States",
+      "career_start": 2012,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 3,
+      "teams": [11]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 44,
+    "fields": {
+      "names": "Dirk Nowitzki",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1717.png",
+      "description": "Dirk Nowitzki transformed the power forward position with elite shooting, one-legged fadeaways and a championship run in Dallas.",
+      "retired": true,
+      "age": "47",
+      "position": "Power Forward",
+      "height": "7 ft 0 in",
+      "nationality": "Germany",
+      "career_start": 1998,
+      "career_end": 2019,
+      "hall_of_fame": true,
+      "championships": 1,
+      "mvps": 1,
+      "all_star_appearances": 14,
+      "teams": [7]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 45,
+    "fields": {
+      "names": "Kevin Garnett",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/708.png",
+      "description": "Kevin Garnett was a fierce defensive anchor and versatile big who brought guard-like mobility, passing and intensity to the frontcourt.",
+      "retired": true,
+      "age": "49",
+      "position": "Power Forward",
+      "height": "6 ft 11 in",
+      "nationality": "United States",
+      "career_start": 1995,
+      "career_end": 2016,
+      "hall_of_fame": true,
+      "championships": 1,
+      "mvps": 1,
+      "all_star_appearances": 15,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 46,
+    "fields": {
+      "names": "Dwyane Wade",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png",
+      "description": "Dwyane Wade was a slashing guard with elite body control, shot blocking for his size and a legendary Miami championship career.",
+      "retired": true,
+      "age": "44",
+      "position": "Shooting Guard",
+      "height": "6 ft 4 in",
+      "nationality": "United States",
+      "career_start": 2003,
+      "career_end": 2019,
+      "hall_of_fame": true,
+      "championships": 3,
+      "mvps": 0,
+      "all_star_appearances": 13,
+      "teams": [6]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 47,
+    "fields": {
+      "names": "Allen Iverson",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/947.png",
+      "description": "Allen Iverson was a fearless scoring guard whose handle, speed and cultural impact made him one of the most influential players ever.",
+      "retired": true,
+      "age": "50",
+      "position": "Guard",
+      "height": "6 ft 0 in",
+      "nationality": "United States",
+      "career_start": 1996,
+      "career_end": 2010,
+      "hall_of_fame": true,
+      "championships": 0,
+      "mvps": 1,
+      "all_star_appearances": 11,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 48,
+    "fields": {
+      "names": "Hakeem Olajuwon",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/165.png",
+      "description": "Hakeem Olajuwon combined elite footwork, shot blocking and post scoring to become one of the greatest two-way centers in NBA history.",
+      "retired": true,
+      "age": "63",
+      "position": "Center",
+      "height": "7 ft 0 in",
+      "nationality": "Nigeria",
+      "career_start": 1984,
+      "career_end": 2002,
+      "hall_of_fame": true,
+      "championships": 2,
+      "mvps": 1,
+      "all_star_appearances": 12,
+      "teams": [13]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 49,
+    "fields": {
+      "names": "Larry Bird",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png",
+      "description": "Larry Bird was an elite forward shooter, passer and competitor who powered Boston with skill, feel and clutch scoring.",
+      "retired": true,
+      "age": "69",
+      "position": "Forward",
+      "height": "6 ft 9 in",
+      "nationality": "United States",
+      "career_start": 1979,
+      "career_end": 1992,
+      "hall_of_fame": true,
+      "championships": 3,
+      "mvps": 3,
+      "all_star_appearances": 12,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 50,
+    "fields": {
+      "names": "Wilt Chamberlain",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/76375.png",
+      "description": "Wilt Chamberlain produced some of the most staggering statistical seasons in basketball history as a dominant scoring and rebounding center.",
+      "retired": true,
+      "age": "63",
+      "position": "Center",
+      "height": "7 ft 1 in",
+      "nationality": "United States",
+      "career_start": 1959,
+      "career_end": 1973,
+      "hall_of_fame": true,
+      "championships": 2,
+      "mvps": 4,
+      "all_star_appearances": 13,
+      "teams": [3, 1]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 51,
+    "fields": {
+      "names": "Steve Nash",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/959.png",
+      "description": "Steve Nash was a brilliant pick-and-roll conductor and shooter whose passing rhythm powered some of the best offenses of his era.",
+      "retired": true,
+      "age": "52",
+      "position": "Point Guard",
+      "height": "6 ft 3 in",
+      "nationality": "Canada",
+      "career_start": 1996,
+      "career_end": 2014,
+      "hall_of_fame": true,
+      "championships": 0,
+      "mvps": 2,
+      "all_star_appearances": 8,
+      "teams": [11, 3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 52,
+    "fields": {
+      "names": "Ray Allen",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/951.png",
+      "description": "Ray Allen was an all-time great shooter whose movement, conditioning and clutch threes helped define modern spacing.",
+      "retired": true,
+      "age": "50",
+      "position": "Shooting Guard",
+      "height": "6 ft 5 in",
+      "nationality": "United States",
+      "career_start": 1996,
+      "career_end": 2014,
+      "hall_of_fame": true,
+      "championships": 2,
+      "mvps": 0,
+      "all_star_appearances": 10,
+      "teams": [8, 6, 10]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 53,
+    "fields": {
+      "names": "Carmelo Anthony",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2546.png",
+      "description": "Carmelo Anthony was a gifted scorer with jab steps, post work and pull-up shooting that made him one of his era's toughest covers.",
+      "retired": true,
+      "age": "41",
+      "position": "Forward",
+      "height": "6 ft 7 in",
+      "nationality": "United States",
+      "career_start": 2003,
+      "career_end": 2022,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 10,
+      "teams": [12, 3]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 54,
+    "fields": {
+      "names": "Paul Pierce",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1718.png",
+      "description": "Paul Pierce was a crafty scoring wing and franchise leader for Boston, known for footwork, strength and late-game shot-making.",
+      "retired": true,
+      "age": "48",
+      "position": "Forward",
+      "height": "6 ft 7 in",
+      "nationality": "United States",
+      "career_start": 1998,
+      "career_end": 2017,
+      "hall_of_fame": true,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 10,
+      "teams": [8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 55,
+    "fields": {
+      "names": "Blake Griffin",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/201933.png",
+      "description": "Blake Griffin entered the league as a spectacular finisher before developing into a skilled passing and shooting forward.",
+      "retired": true,
+      "age": "37",
+      "position": "Power Forward",
+      "height": "6 ft 9 in",
+      "nationality": "United States",
+      "career_start": 2010,
+      "career_end": 2023,
+      "championships": 0,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [13, 11, 8]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 56,
+    "fields": {
+      "names": "Pau Gasol",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2200.png",
+      "description": "Pau Gasol was a skilled international big whose passing, touch and interior scoring helped power championship teams in Los Angeles.",
+      "retired": true,
+      "age": "45",
+      "position": "Forward-Center",
+      "height": "7 ft 0 in",
+      "nationality": "Spain",
+      "career_start": 2001,
+      "career_end": 2019,
+      "hall_of_fame": true,
+      "championships": 2,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [3, 10]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 57,
+    "fields": {
+      "names": "Tony Parker",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2225.png",
+      "description": "Tony Parker was a quick, creative point guard whose paint scoring and control helped San Antonio win multiple championships.",
+      "retired": true,
+      "age": "43",
+      "position": "Point Guard",
+      "height": "6 ft 2 in",
+      "nationality": "France",
+      "career_start": 2001,
+      "career_end": 2019,
+      "hall_of_fame": true,
+      "championships": 4,
+      "mvps": 0,
+      "all_star_appearances": 6,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 58,
+    "fields": {
+      "names": "Manu Ginobili",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/1938.png",
+      "description": "Manu Ginobili brought creativity, passing flair and fearless attacking to San Antonio while becoming one of the greatest sixth men ever.",
+      "retired": true,
+      "age": "48",
+      "position": "Guard",
+      "height": "6 ft 6 in",
+      "nationality": "Argentina",
+      "career_start": 2002,
+      "career_end": 2018,
+      "hall_of_fame": true,
+      "championships": 4,
+      "mvps": 0,
+      "all_star_appearances": 2,
+      "teams": [9]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 59,
+    "fields": {
+      "names": "Chris Bosh",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2547.png",
+      "description": "Chris Bosh was a versatile frontcourt scorer and defender whose spacing and adaptability were essential to Miami's championship teams.",
+      "retired": true,
+      "age": "41",
+      "position": "Forward-Center",
+      "height": "6 ft 11 in",
+      "nationality": "United States",
+      "career_start": 2003,
+      "career_end": 2016,
+      "hall_of_fame": true,
+      "championships": 2,
+      "mvps": 0,
+      "all_star_appearances": 11,
+      "teams": [6]
+    }
+  },
+  {
+    "model": "basketball.basketball",
+    "pk": 60,
+    "fields": {
+      "names": "Dwight Howard",
+      "image": "https://cdn.nba.com/headshots/nba/latest/1040x760/2730.png",
+      "description": "Dwight Howard was a dominant defensive center and lob threat whose athletic prime made him one of the league's top interior forces.",
+      "retired": true,
+      "age": "40",
+      "position": "Center",
+      "height": "6 ft 10 in",
+      "nationality": "United States",
+      "career_start": 2004,
+      "career_end": 2022,
+      "championships": 1,
+      "mvps": 0,
+      "all_star_appearances": 8,
+      "teams": [3]
+    }
+  }
+]

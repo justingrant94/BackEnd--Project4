@@ -1,0 +1,184 @@
+[
+  {
+    "model": "teams.team",
+    "pk": 1,
+    "fields": {
+      "name": "Golden State Warriors",
+      "city": "San Francisco",
+      "abbreviation": "GSW",
+      "conference": "Western",
+      "division": "Pacific",
+      "logo": "https://cdn.nba.com/logos/nba/1610612744/primary/L/logo.svg",
+      "primary_color": "#1D428A",
+      "secondary_color": "#FFC72C"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 2,
+    "fields": {
+      "name": "Oklahoma City Thunder",
+      "city": "Oklahoma City",
+      "abbreviation": "OKC",
+      "conference": "Western",
+      "division": "Northwest",
+      "logo": "https://cdn.nba.com/logos/nba/1610612760/primary/L/logo.svg",
+      "primary_color": "#007AC1",
+      "secondary_color": "#EF3B24"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 3,
+    "fields": {
+      "name": "Los Angeles Lakers",
+      "city": "Los Angeles",
+      "abbreviation": "LAL",
+      "conference": "Western",
+      "division": "Pacific",
+      "logo": "https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg",
+      "primary_color": "#552583",
+      "secondary_color": "#FDB927"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 4,
+    "fields": {
+      "name": "Washington Wizards",
+      "city": "Washington",
+      "abbreviation": "WAS",
+      "conference": "Eastern",
+      "division": "Southeast",
+      "logo": "https://cdn.nba.com/logos/nba/1610612764/primary/L/logo.svg",
+      "primary_color": "#002B5C",
+      "secondary_color": "#E31837"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 5,
+    "fields": {
+      "name": "Chicago Bulls",
+      "city": "Chicago",
+      "abbreviation": "CHI",
+      "conference": "Eastern",
+      "division": "Central",
+      "logo": "https://cdn.nba.com/logos/nba/1610612741/primary/L/logo.svg",
+      "primary_color": "#CE1141",
+      "secondary_color": "#000000"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 6,
+    "fields": {
+      "name": "Miami Heat",
+      "city": "Miami",
+      "abbreviation": "MIA",
+      "conference": "Eastern",
+      "division": "Southeast",
+      "logo": "https://cdn.nba.com/logos/nba/1610612748/primary/L/logo.svg",
+      "primary_color": "#98002E",
+      "secondary_color": "#F9A01B"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 7,
+    "fields": {
+      "name": "Dallas Mavericks",
+      "city": "Dallas",
+      "abbreviation": "DAL",
+      "conference": "Western",
+      "division": "Southwest",
+      "logo": "https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg",
+      "primary_color": "#00538C",
+      "secondary_color": "#B8C4CA"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 8,
+    "fields": {
+      "name": "Boston Celtics",
+      "city": "Boston",
+      "abbreviation": "BOS",
+      "conference": "Eastern",
+      "division": "Atlantic",
+      "logo": "https://cdn.nba.com/logos/nba/1610612738/primary/L/logo.svg",
+      "primary_color": "#007A33",
+      "secondary_color": "#BA9653"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 9,
+    "fields": {
+      "name": "San Antonio Spurs",
+      "city": "San Antonio",
+      "abbreviation": "SAS",
+      "conference": "Western",
+      "division": "Southwest",
+      "logo": "https://cdn.nba.com/logos/nba/1610612759/primary/L/logo.svg",
+      "primary_color": "#C4CED4",
+      "secondary_color": "#000000"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 10,
+    "fields": {
+      "name": "Milwaukee Bucks",
+      "city": "Milwaukee",
+      "abbreviation": "MIL",
+      "conference": "Eastern",
+      "division": "Central",
+      "logo": "https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg",
+      "primary_color": "#00471B",
+      "secondary_color": "#EEE1C6"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 11,
+    "fields": {
+      "name": "Brooklyn Nets",
+      "city": "Brooklyn",
+      "abbreviation": "BKN",
+      "conference": "Eastern",
+      "division": "Atlantic",
+      "logo": "https://cdn.nba.com/logos/nba/1610612751/primary/L/logo.svg",
+      "primary_color": "#000000",
+      "secondary_color": "#FFFFFF"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 12,
+    "fields": {
+      "name": "Cleveland Cavaliers",
+      "city": "Cleveland",
+      "abbreviation": "CLE",
+      "conference": "Eastern",
+      "division": "Central",
+      "logo": "https://cdn.nba.com/logos/nba/1610612739/primary/L/logo.svg",
+      "primary_color": "#6F263D",
+      "secondary_color": "#FFB81C"
+    }
+  },
+  {
+    "model": "teams.team",
+    "pk": 13,
+    "fields": {
+      "name": "LA Clippers",
+      "city": "Los Angeles",
+      "abbreviation": "LAC",
+      "conference": "Western",
+      "division": "Pacific",
+      "logo": "https://cdn.nba.com/logos/nba/1610612746/primary/L/logo.svg",
+      "primary_color": "#C8102E",
+      "secondary_color": "#1D428A"
+    }
+  }
+]
