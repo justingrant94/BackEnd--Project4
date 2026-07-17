@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getTeams } from '../api/client'
 import SafeImage from '../components/SafeImage'
 import StatusMessage from '../components/StatusMessage'
+import { getTeamThemeClass } from '../lib/teamTheme'
 
 function Teams() {
   const [teams, setTeams] = useState([])
@@ -39,14 +40,14 @@ function Teams() {
         {teams.map((team) => (
           <Link
             to={`/players?team=${team.abbreviation || team.name}`}
-            className="team-card"
+            className={`team-card ${getTeamThemeClass(team)}`}
             key={team.id}
-            style={{ '--team-color': team.primary_color || '#111827' }}
           >
             <SafeImage className="team-logo" src={team.logo} alt={`${team.name} logo`} fallbackLabel={team.abbreviation || team.name} />
             <div>
               <p className="eyebrow">{team.abbreviation}</p>
               <h2>{team.name}</h2>
+              <p>{(team.basketball || []).length} linked players</p>
               <p>{team.conference} conference, {team.division} division</p>
             </div>
           </Link>

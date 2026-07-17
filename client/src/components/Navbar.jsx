@@ -13,7 +13,10 @@ function Navbar() {
   return (
     <header className="site-header">
       <Link className="brand" to="/" aria-label="Best In The Game home">
-        <span className="brand-mark">BIG</span>
+        <span className="brand-mark" aria-hidden="true">
+          <span className="brand-mark__crown" />
+          <span className="brand-mark__ball" />
+        </span>
         <span>
           <strong>Best In The Game</strong>
           <small>Basketball directory</small>

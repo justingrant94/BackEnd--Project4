@@ -62,19 +62,19 @@ function Home() {
       </section>
 
       <section className="stat-strip" aria-label="Directory summary">
-        <div><span>{players.length}</span><p>Featured records</p></div>
-        <div><span>{activeCount}</span><p>Active in preview</p></div>
-        <div><span>{retiredCount}</span><p>Retired legends</p></div>
-        <div><span>{teams.length}</span><p>Teams loaded</p></div>
+        <div><span>{players.length}</span><p>Previewed Players</p></div>
+        <div><span>{activeCount}</span><p>Active Players</p></div>
+        <div><span>{retiredCount}</span><p>Retired Legends</p></div>
+        <div><span>{teams.length}</span><p>Teams</p></div>
       </section>
 
       <section className="page-section">
         <div className="section-heading section-heading--split">
           <div>
-            <p className="eyebrow">Featured players</p>
-            <h2>Start with the championship names</h2>
+            <p className="eyebrow">Featured Players</p>
+            <h2>Championship pedigree, all-time impact, and modern stars.</h2>
           </div>
-          <Link to="/players">Open full directory</Link>
+          <Link className="section-action" to="/players">View all players</Link>
         </div>
 
         {loading && <StatusMessage>Loading players...</StatusMessage>}
