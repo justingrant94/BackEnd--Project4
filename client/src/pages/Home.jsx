@@ -49,7 +49,15 @@ function Home() {
           </div>
         </div>
 
-        {featured && (
+        {loading && (
+          <div className="featured-panel featured-panel--loading">
+            <StatusMessage loading title="Loading featured player">
+              Pulling the latest player records from the database.
+            </StatusMessage>
+          </div>
+        )}
+
+        {!loading && featured && (
           <div className="featured-panel">
             <SafeImage src={featured.image} alt={featured.names} fallbackLabel={featured.names} />
             <div>
@@ -57,6 +65,14 @@ function Home() {
               <h2>{featured.names}</h2>
               <p>{featured.position}</p>
             </div>
+          </div>
+        )}
+
+        {!loading && !featured && !error && (
+          <div className="featured-panel featured-panel--empty">
+            <StatusMessage type="empty" title="No featured player yet">
+              We are working on adding more players to the database, so this spotlight will appear as the records grow.
+            </StatusMessage>
           </div>
         )}
       </section>
@@ -77,11 +93,22 @@ function Home() {
           <Link className="section-action" to="/players">View all players</Link>
         </div>
 
-        {loading && <StatusMessage>Loading players...</StatusMessage>}
+        {loading && (
+          <StatusMessage loading title="Loading players">
+            Pulling player profiles, career stats, and team links from the database.
+          </StatusMessage>
+        )}
         {error && <StatusMessage type="error">{error}</StatusMessage>}
-        <div className="player-grid">
-          {players.slice(0, 6).map((player) => <PlayerCard key={player.id} player={player} teams={teams} featured />)}
-        </div>
+        {!loading && !error && players.length > 0 && (
+          <div className="player-grid">
+            {players.slice(0, 6).map((player) => <PlayerCard key={player.id} player={player} teams={teams} featured />)}
+          </div>
+        )}
+        {!loading && !error && !players.length && (
+          <StatusMessage type="empty" title="No player data yet">
+            We are working on adding more players to the database. Check back soon for new profiles and career records.
+          </StatusMessage>
+        )}
       </section>
     </main>
   )

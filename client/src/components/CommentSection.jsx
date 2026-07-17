@@ -75,7 +75,11 @@ function CommentSection({ playerId, comments = [], onChanged }) {
               )}
             </div>
           </article>
-        )) : <p className="muted">No comments yet.</p>}
+        )) : (
+          <StatusMessage type="empty" title="No comments yet">
+            Comments will appear here once users start adding notes to this player page.
+          </StatusMessage>
+        )}
       </div>
     </section>
   )

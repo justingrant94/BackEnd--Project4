@@ -32,7 +32,13 @@ function PlayerDetail() {
   }, [id])
 
   if (loading) {
-    return <main className="page-shell"><StatusMessage>Loading player...</StatusMessage></main>
+    return (
+      <main className="page-shell">
+        <StatusMessage loading title="Loading player">
+          Pulling this profile, stats, teams, and comments from the database.
+        </StatusMessage>
+      </main>
+    )
   }
 
   if (error) {
@@ -40,7 +46,13 @@ function PlayerDetail() {
   }
 
   if (!player) {
-    return <main className="page-shell"><StatusMessage>Player not found.</StatusMessage></main>
+    return (
+      <main className="page-shell">
+        <StatusMessage type="empty" title="Player not found">
+          This player is not in the database yet. We are working on adding more profiles and career records.
+        </StatusMessage>
+      </main>
+    )
   }
 
   return (
@@ -58,6 +70,11 @@ function PlayerDetail() {
           <div className="team-chip-list">
             {(player.teams || []).map((team) => <TeamChip key={team.id} team={team} />)}
           </div>
+          {!(player.teams || []).length && (
+            <StatusMessage type="empty" title="Team history coming soon">
+              We are working on adding team links for this player.
+            </StatusMessage>
+          )}
           <p>{player.description}</p>
 
           <dl className="bio-list">

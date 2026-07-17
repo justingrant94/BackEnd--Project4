@@ -421,6 +421,20 @@ h3 {
   background: var(--color-ink);
 }
 
+.featured-panel--loading,
+.featured-panel--empty {
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: var(--color-ink);
+}
+
+.featured-panel--loading .status-message,
+.featured-panel--empty .status-message {
+  width: 100%;
+  margin: 0;
+}
+
 .featured-panel .safe-image {
   position: absolute;
   inset: 0;
@@ -786,15 +800,53 @@ textarea:focus {
 }
 
 .status-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   margin: var(--space-4) 0;
-  padding: 14px 16px;
+  padding: 16px 18px;
   color: var(--color-muted);
+}
+
+.status-message strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-ink);
+  font-weight: 1000;
+}
+
+.status-message p {
+  color: inherit;
+  line-height: 1.5;
+}
+
+.status-message__spinner {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--color-line);
+  border-top-color: var(--color-court);
+  border-radius: 999px;
+  animation: status-spin 800ms linear infinite;
+}
+
+.status-message--empty {
+  color: var(--color-muted);
+  border-color: var(--color-line-strong);
+  background:
+    linear-gradient(135deg, var(--color-paper), var(--color-panel));
 }
 
 .status-message--error {
   color: var(--color-danger);
   border-color: var(--color-danger);
   background: var(--color-danger-soft);
+}
+
+@keyframes status-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .detail-shell {
@@ -862,6 +914,10 @@ textarea:focus {
 .comment-list {
   display: grid;
   gap: var(--space-3);
+}
+
+.comment-list .status-message {
+  margin: 0;
 }
 
 .comment-card {

@@ -33,10 +33,14 @@ function Teams() {
         <p>Browse teams and use the team cards as a route into player discovery.</p>
       </section>
 
-      {loading && <StatusMessage>Loading teams...</StatusMessage>}
+      {loading && (
+        <StatusMessage loading title="Loading teams">
+          Pulling team records and linked players from the database.
+        </StatusMessage>
+      )}
       {error && <StatusMessage type="error">{error}</StatusMessage>}
 
-      <div className="team-grid">
+      {!loading && !error && teams.length > 0 && <div className="team-grid">
         {teams.map((team) => (
           <Link
             to={`/players?team=${team.abbreviation || team.name}`}
@@ -52,7 +56,13 @@ function Teams() {
             </div>
           </Link>
         ))}
-      </div>
+      </div>}
+
+      {!loading && !error && !teams.length && (
+        <StatusMessage type="empty" title="No team data yet">
+          We are working on adding teams to the database. Once team records are available, they will appear here.
+        </StatusMessage>
+      )}
     </main>
   )
 }
