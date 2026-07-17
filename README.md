@@ -56,8 +56,8 @@ With the landing page being a compilation of some of the best basketball plays t
 **5.** TablePlus
 
 **Deployment:**
-The app is deployed on ....and can be found here.
 
+](https://best-in-the-game-ac438776330d.herokuapp.com)
 **Process:**
 
 For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. I created an ERD diagram and used this to visually display our model relationships in the backend.
