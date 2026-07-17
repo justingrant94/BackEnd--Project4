@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getPlayer } from '../api/client'
 import CommentSection from '../components/CommentSection'
+import SafeImage from '../components/SafeImage'
 import StatsPanel from '../components/StatsPanel'
 import StatusMessage from '../components/StatusMessage'
 import TeamChip from '../components/TeamChip'
@@ -48,7 +49,7 @@ function PlayerDetail() {
 
       <section className="player-detail">
         <div className="player-detail__media">
-          <img src={player.image} alt={player.names} />
+          <SafeImage src={player.image} alt={player.names} fallbackLabel={player.names} />
         </div>
 
         <div className="player-detail__content">

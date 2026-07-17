@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getPlayers, getTeams } from '../api/client'
 import PlayerCard from '../components/PlayerCard'
+import SafeImage from '../components/SafeImage'
 import StatusMessage from '../components/StatusMessage'
 
 function Home() {
@@ -50,7 +51,7 @@ function Home() {
 
         {featured && (
           <div className="featured-panel">
-            <img src={featured.image} alt={featured.names} />
+            <SafeImage src={featured.image} alt={featured.names} fallbackLabel={featured.names} />
             <div>
               <p className="eyebrow">Featured legend</p>
               <h2>{featured.names}</h2>

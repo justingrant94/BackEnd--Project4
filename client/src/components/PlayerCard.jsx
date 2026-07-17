@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SafeImage from './SafeImage'
 import TeamChip from './TeamChip'
 
 function PlayerCard({ player, teams = [], featured = false }) {
@@ -10,7 +11,7 @@ function PlayerCard({ player, teams = [], featured = false }) {
   return (
     <article className={`player-card${featured ? ' player-card--featured' : ''}`}>
       <Link to={`/players/${player.id}`} className="player-card__media" aria-label={`View ${player.names}`}>
-        <img src={player.image} alt={player.names} loading="lazy" />
+        <SafeImage src={player.image} alt={player.names} fallbackLabel={player.names} loading="lazy" />
         <span className={`status-badge ${player.retired ? 'status-badge--retired' : 'status-badge--active'}`}>
           {player.retired ? 'Retired' : 'Active'}
         </span>

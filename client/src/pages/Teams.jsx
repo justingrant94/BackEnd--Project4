@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getTeams } from '../api/client'
+import SafeImage from '../components/SafeImage'
 import StatusMessage from '../components/StatusMessage'
 
 function Teams() {
@@ -42,7 +43,7 @@ function Teams() {
             key={team.id}
             style={{ '--team-color': team.primary_color || '#111827' }}
           >
-            {team.logo && <img src={team.logo} alt="" />}
+            <SafeImage className="team-logo" src={team.logo} alt={`${team.name} logo`} fallbackLabel={team.abbreviation || team.name} />
             <div>
               <p className="eyebrow">{team.abbreviation}</p>
               <h2>{team.name}</h2>
