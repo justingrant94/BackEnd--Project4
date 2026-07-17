@@ -1,156 +1,396 @@
-**General Assembly**
-A Full Stack project as a team of four with a 1 week deadline.
+# Best In The Game
 
-**Best In The Game**
+Best In The Game is a full-stack basketball directory built with a Django REST Framework API and a React frontend. The original General Assembly SEI project has been revisited and expanded into a more complete player discovery app with richer seed data, filtering, player details, team browsing, authentication, comments, and a Heroku deployment.
 
-The final project on the SEI course. I had 1 week to create a Full Stack app, the backend was built with Django and Python, the frontend was React.js
+Live site: https://best-in-the-game-ac438776330d.herokuapp.com/
 
-With the landing page being a compilation of some of the best basketball plays that has taken place in the NBA.
+GitHub repository: https://github.com/justingrant94/BackEnd--Project4
 
-<img width="1511" alt="Screenshot 2022-06-21 at 13 28 19" src="https://user-images.githubusercontent.com/73545574/175279438-27ecc878-bb65-46d4-bd8b-77ba12c32e9c.png">
+## Project Overview
 
-**Brief:**
+The app gives users a clean way to explore basketball players, compare key career information, filter by team/status/position, and leave comments on player pages when authenticated. The backend stores player, team, comment, and user data, while the frontend consumes the API through a Vite React single-page app served by Django in production.
 
-**1.** Build a full-stack application - by making your own backend and your own frontend.
+This rebuild focused on keeping the existing Django/React approach, but making the project more complete, presentable, and deployment-ready.
 
-**2.** Use a Python Django API using Django REST Framework to serve your data from an SQL database.
+## Screenshots
 
-**3.** Consume your API with a separate frontend built with React.
+### Home
 
-**4.** Create a MERN app & ensure there is CRUD functionality.
+![Best In The Game home page](docs/screenshots/home.png)
 
-**5.** Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut.
+### Player Directory
 
-**6.** Have a visually impressive design.
+![Player directory with filters](docs/screenshots/players.png)
 
-**7.** Be deployed online so it's publicly accessible.
+### Player Detail
 
-**Built With:**
+![Player detail page with stats and comments](docs/screenshots/player-detail.png)
 
-**Frontend:**
+### Team Directory
 
-**1.** React.js
+![Team directory](docs/screenshots/teams.png)
 
-**2.** JSX
+## Core Features
 
-**3.** CSS and Sass
+- Player directory with 60 seeded player records.
+- Team directory with 13 seeded NBA teams.
+- Search, pagination, team filtering, position filtering, active/retired filtering, and sorting.
+- Player detail pages with bio information, team chips, career metadata, and stat panels.
+- JWT authentication for register/login.
+- Authenticated commenting on player pages.
+- Delete comment endpoint wired through the frontend.
+- Image fallback component for remote NBA assets that fail to load.
+- Vite React frontend served by Django/WhiteNoise on Heroku.
+- Heroku Postgres production database with seed data loaded.
 
-**4.** React BootStrap
+## Tech Stack
 
-**5.** Axios
+### Frontend
 
-**Backend:**
-<!-- Python -->
-<!-- Django -->
+- React 18
+- Vite
+- React Router
+- JavaScript
+- CSS
+- Fetch API
 
-<!-- Dev Tools-->
- 
-**1.** Git
+### Backend
 
-**2.** GitHub
+- Python 3.12
+- Django
+- Django REST Framework
+- PostgreSQL on Heroku
+- SQLite for local development
+- PyJWT
+- WhiteNoise
+- Gunicorn
 
-**3.** VScode
+### Deployment
 
-**4.** Insomnia
+- Heroku
+- Heroku Postgres
+- Node buildpack for Vite build
+- Python buildpack for Django API
 
-**5.** TablePlus
+## What Was Improved
 
-**Deployment:**
+The project was expanded from a smaller course submission into a more comprehensive portfolio-ready app.
 
-](https://best-in-the-game-ac438776330d.herokuapp.com)
-**Process:**
+### Data Model Expansion
 
-For this one week project we worked solo on our project, so I wanted to create a website that displayed some of the best Players in the NBA as I am a massive basketball fanatic. I thought what could go wrong?!. I created an ERD diagram and used this to visually display our model relationships in the backend.
+The player model now stores richer profile and career information while keeping the original model shape intact.
 
-I also created a virtual whiteboard using Excalidraw, this enables me to create the visuals on how I would like the page to look, adding notes, endpoints, and how each page will look.
+```python
+class Basketball(models.Model):
+		names = models.CharField(max_length=100, default=None)
+		image = models.CharField(max_length=300, default=None)
+		description = models.CharField(max_length=1000, default=None)
+		retired = models.BooleanField(default=True)
+		age = models.CharField(max_length=100, default=None)
+		position = models.CharField(max_length=50, blank=True, null=True)
+		height = models.CharField(max_length=50, blank=True, null=True)
+		nationality = models.CharField(max_length=100, blank=True, null=True)
+		career_start = models.PositiveIntegerField(blank=True, null=True)
+		career_end = models.PositiveIntegerField(blank=True, null=True)
+		hall_of_fame = models.BooleanField(default=False)
+		championships = models.PositiveIntegerField(default=0)
+		mvps = models.PositiveIntegerField(default=0)
+		all_star_appearances = models.PositiveIntegerField(default=0)
+		teams = models.ManyToManyField('teams.Team', related_name='basketball')
+```
 
-<img width="1223" alt="Screenshot 2022-06-21 at 13 36 38" src="https://user-images.githubusercontent.com/73545574/175280271-ecf042b8-64c3-476b-b22a-3052d0ec075d.png">
+### API Filtering And Pagination
 
-<img width="1234" alt="Screenshot 2022-06-21 at 13 43 53" src="https://user-images.githubusercontent.com/73545574/175280325-a25616e0-c0b3-4268-9158-c11d9d404071.png">
+The player list endpoint now supports query parameters for search, active/retired status, teams, positions, nationality, PPG ranges, sorting, and pagination.
 
-**Backend:**
+```python
+class BasketballListView(APIView):
+		permission_classes = (IsAuthenticatedOrReadOnly, )
+		pagination_class = BasketballPagination
 
-Covering the backend first, I wanted to create the registerView, login view and also the Authentication.
+		def get(self, request):
+				basketball = Basketball.objects.prefetch_related('teams').all()
 
-<img width="596" alt="Screenshot 2022-06-21 at 13 47 04" src="https://user-images.githubusercontent.com/73545574/175280405-ca439291-da8b-4af5-905d-ab5314a17362.png">
-
-<img width="366" alt="Screenshot 2022-06-21 at 13 48 15" src="https://user-images.githubusercontent.com/73545574/175280442-7edfdedf-9ef3-4f0e-97af-7225b0e920d4.png">
-
-I also spent some time adding dummy data to our seeds, this is so when you click onto the site there are plenty of basketballers that the user can see, which was vital for me to do as it gave the site a real genuine feel.
-
-**Example:**
-
-Below I wanted to try and create as much information on the player as possible. I created whether or not the player is still active in the NBA so once you click onto the player you would get a deeper insight into the player being their age and description.
-I spent time adding in dummy data to our seeds, this is so when you click onto the site there are plenty of players already on show which gives the website a real genuine feel. Example:
-
-
-<img width="513" alt="Screenshot 2022-07-13 at 14 13 27" src="https://user-images.githubusercontent.com/73545574/178742010-e232180e-ddc0-4863-88ed-4fac2f3b96bc.png">
-
-
-<img width="875" alt="Screenshot 2022-06-21 at 13 50 11" src="https://user-images.githubusercontent.com/73545574/175280545-0a476838-8f5a-40da-83a5-c504e8051780.png">
-
-**Frontend:**
-
-Once the backend was completed and working within insomnia, I linked it to the frontend and started building. Again, this was a daunting task and quite exciting as I really wanted the final product to be quite impressive but at the same time I had to be quite realistic as this was my first time creating a full stack site.
-I wanted to try and make the site as responsive as possible on all screen sizes, which I was not too sure how I would achieve, but I knew that Google would be my best friend for a task like this. For the frontend, I focused on creating the Navbar, set out the routes within the App.js file, and also made sure that I created the HomePage first, I thought of cloning the NBA website but once I gave it deep thought I wanted to create the website in my own way.
-
- 
-Here is a snippet to show  the conditional formatting, checking to see if the user is logged in.
-
-<img width="524" alt="Screenshot 2022-06-21 at 13 57 08" src="https://user-images.githubusercontent.com/73545574/175280689-38e5a805-d7e3-44af-a8fa-0ec2d809df40.png">
-
-**Register/Login:**
-
-<img width="514" alt="Screenshot 2022-06-21 at 13 58 29" src="https://user-images.githubusercontent.com/73545574/175280747-7ca1e896-fa69-41d3-a60c-b793d874da86.png">
-
-**Commenting on favorite players:**
- 
-I wanted to allow the users that have registered to only be able to leave comments and delete comments that they have created under the players cards, which appears on the bottom of the page of every player, so ultimately the user has come across a player that they really like they can essentially add a comment on the basketball players page, which I also incorporated the error handling to understand if it doesn't why that also is.
-
-<img width="518" alt="Screenshot 2022-07-13 at 14 06 58" src="https://user-images.githubusercontent.com/73545574/178740687-8b8626e3-14a2-4e90-8315-8f066b0b022c.png">
-
-
-<img width="1111" alt="Screenshot 2022-07-13 at 14 06 24" src="https://user-images.githubusercontent.com/73545574/178740601-c68b7cb1-f1f5-475b-aa17-0976805f0fa8.png">
-
- <img width="287" alt="Screenshot 2022-06-21 at 14 02 46" src="https://user-images.githubusercontent.com/73545574/175280896-96419496-dc3e-4df4-9bbb-796ba698e3c8.png">
- 
- <img width="375" alt="Screenshot 2022-06-21 at 14 02 55" src="https://user-images.githubusercontent.com/73545574/175280928-6a36aa00-31d4-42b5-ba57-70afb7337ce7.png">
- 
-**Challenges:**
- 
-**1.** My first challenge was allowing the user to register and then not having to log in again - which I never managed to overcome due to the deadline fast approaching, which left me quite puzzled. - That is something that I am looking to rectify in the near future.  
-
-**2.** Working with reactBootstrap for the first time on my own, I got off to a slow start which I struggled with for a little time. However, after taking a break and creating a map of what I want to achieve and just playing around with it, I managed to get it to work with the way I envisioned it to look to a certain extent. 
-
-**3.** My main challenges were enabling the user to delete their comments. 
-
-**Bugs:**
- 
-**1.** The authenticated user is unable to delete their comment which I was working on for sometime but for the love of me I couldn't figure out how to sort it out, which is something that I would love to be able to fix in the future as comments can't be deleted on the frontend.
-
-**2.** Once the user has registered they still need to login as opposed to already being logged in. 
-
-**Future Improvements:**
- 
-**1.** Bug fixes.
-
-**2.** Search functionality for players.
-
-**3.** Filters for teams so you can search for the greatest players.
-
-**4.** Now that I understand the different http error codes, I would like to make my own custom errors.
-
-**5.** Creating a filter that enables the user to filter who is retired and players by teams they have played for.
-
-**Wins & Key Learnings:**
- 
-**1.** This project reinforced my understanding of axios and django like no other project. I think being in control from start to finish enabled me to understand why I would use certain elements and what happens if it is used incorrectly.
-
-**2.** Stepping away and taking a break is sometimes the perfect remedy to overcoming a block, as many of the time I would find myself glued to my desk completely puzzling myself.
-
-**3.**  Really pleased with how clean the app looks, as I was quite skeptical in the beginning as I thought maybe I may have bit off more than I can chew.
-
-
-
+				search = request.query_params.get('search')
+				retired = request.query_params.get('retired')
+				team = request.query_params.get('team')
+				position = request.query_params.get('position')
+				sort = request.query_params.get('sort')
+
+				if search:
+						basketball = basketball.filter(names__icontains=search)
+
+				if retired in ('true', 'false'):
+						basketball = basketball.filter(retired=retired == 'true')
+
+				if team:
+						team_filter = Q(teams__name__icontains=team) | Q(teams__abbreviation__iexact=team)
+						if team.isdigit():
+								team_filter = team_filter | Q(teams__id=int(team))
+						basketball = basketball.filter(team_filter)
+
+				if position:
+						basketball = basketball.filter(position__icontains=position)
+```
+
+### Frontend API Helper
+
+The React app uses one API helper so public requests avoid stale auth headers and protected actions still include the JWT token.
+
+```js
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+
+export async function apiRequest(path, options = {}) {
+	const token = localStorage.getItem('bestInGameToken')
+	const headers = {
+		'Content-Type': 'application/json',
+		...options.headers,
+	}
+
+	if (token && options.auth !== false) {
+		headers.Authorization = `Bearer ${token}`
+	}
+
+	const response = await fetch(`${API_BASE_URL}${path}`, {
+		...options,
+		headers,
+	})
+
+	const data = await response.json().catch(() => null)
+
+	if (!response.ok) {
+		const message = data?.detail || data?.message || data?.Message || 'Something went wrong.'
+		throw new Error(message)
+	}
+
+	return data
+}
+```
+
+### Player Directory UI
+
+The player page keeps filters in React state and reloads the API whenever the filter state changes.
+
+```jsx
+useEffect(() => {
+	async function loadPlayers() {
+		setLoading(true)
+		setError('')
+
+		try {
+			const data = await getPlayers({ ...filters, page_size: 12 })
+			setPlayers(data.results || data)
+			setCount(data.count || data.length || 0)
+		} catch (err) {
+			setError(err.message)
+		} finally {
+			setLoading(false)
+		}
+	}
+
+	loadPlayers()
+}, [filters])
+```
+
+### Commenting
+
+Authenticated users can post comments from the player detail page. The UI calls the API and reloads the player detail data after changes.
+
+```jsx
+async function handleSubmit(event) {
+	event.preventDefault()
+	setError('')
+
+	if (!text.trim()) {
+		setError('Add a comment before posting.')
+		return
+	}
+
+	try {
+		setSubmitting(true)
+		await createComment({ text, basketball: playerId })
+		setText('')
+		onChanged()
+	} catch (err) {
+		setError(err.message)
+	} finally {
+		setSubmitting(false)
+	}
+}
+```
+
+### JWT Authentication Fix
+
+The login endpoint now stores the JWT subject as a string, which keeps it compatible with the PyJWT version used in the project.
+
+```python
+token = jwt.encode(
+		{
+				'sub': str(user_to_validate.id),
+				'exp': int(dt.strftime('%s'))
+		},
+		settings.SECRET_KEY,
+		algorithm='HS256'
+)
+```
+
+### Deployment Configuration
+
+Django now reads production values from Heroku config vars, uses `DATABASE_URL` for Heroku Postgres, and serves the Vite build through WhiteNoise.
+
+```python
+SECRET_KEY = os.environ.get('SECRET_KEY', 'local-dev-secret-key')
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
+
+DATABASES = {
+		'default': dj_database_url.config(
+				default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+		)
+}
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+		('assets', BASE_DIR / 'client' / 'dist' / 'assets'),
+]
+```
+
+Vite builds static assets using `/static/` so the deployed Django app can serve the React bundle correctly.
+
+```js
+export default defineConfig({
+	base: '/static/',
+	plugins: [react()],
+	server: {
+		proxy: {
+			'/api': 'http://127.0.0.1:8000',
+		},
+	},
+})
+```
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/api/basketball/` | List players with pagination and filters |
+| `GET` | `/api/basketball/:id/` | Get a populated player detail record |
+| `GET` | `/api/teams/` | List teams with related players |
+| `POST` | `/api/auth/register/` | Register a new user |
+| `POST` | `/api/auth/login/` | Login and receive a JWT |
+| `GET` | `/api/auth/profile/` | Return the authenticated user profile |
+| `POST` | `/api/comments/` | Create a comment for a player |
+| `DELETE` | `/api/comments/:id/` | Delete a comment |
+
+Example player filter request:
+
+```txt
+/api/basketball/?search=jordan&retired=true&team=CHI&sort=-championships&page_size=12
+```
+
+## Local Setup
+
+Clone the repository and install backend dependencies.
+
+```bash
+git clone https://github.com/justingrant94/BackEnd--Project4.git
+cd BackEnd--Project4
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Run migrations and seed the database.
+
+```bash
+python manage.py migrate
+python manage.py loaddata teams/seeds.json
+python manage.py loaddata basketball/seeds.json
+```
+
+Install frontend dependencies and run the Vite dev server.
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+In a second terminal, run Django.
+
+```bash
+source .venv/bin/activate
+python manage.py runserver
+```
+
+The Vite dev server proxies `/api` requests to Django at `http://127.0.0.1:8000`.
+
+## Deployment Notes
+
+The app is deployed as a single Heroku app. Node builds the Vite frontend first, then Python installs Django dependencies and collects static files.
+
+Root `package.json`:
+
+```json
+{
+	"scripts": {
+		"heroku-postbuild": "cd client && npm install --include=dev && npm run build"
+	},
+	"engines": {
+		"node": "22.x"
+	}
+}
+```
+
+`Procfile`:
+
+```Procfile
+web: gunicorn project.wsgi:application
+```
+
+Heroku config required:
+
+```bash
+heroku config:set DEBUG=False --app best-in-the-game
+heroku config:set SECRET_KEY="your-production-secret" --app best-in-the-game
+```
+
+Production database setup:
+
+```bash
+heroku run python manage.py migrate --app best-in-the-game
+heroku run python manage.py loaddata teams/seeds.json --app best-in-the-game
+heroku run python manage.py loaddata basketball/seeds.json --app best-in-the-game
+```
+
+## Challenges Solved During The Rebuild
+
+- The project originally had no working React frontend in the `client` folder, so a new Vite React app was built around the existing API.
+- The seed data was expanded to 60 player records and 13 team records without rewiring the existing model relationships.
+- Public API requests were updated so stale local tokens do not break unauthenticated browsing.
+- JWT `sub` values were changed to strings to satisfy the current PyJWT expectations.
+- Heroku deployment was updated from Django `runserver` to Gunicorn.
+- The repo was moved from Pipenv deployment markers to `requirements.txt` because Heroku now rejects multiple Python package manager files.
+- Heroku buildpacks were ordered so Node builds the Vite frontend before Django collects static files.
+- Vite asset paths were aligned with Django static serving so the deployed React app loads correctly.
+- Remote image failures are handled with a reusable `SafeImage` fallback component.
+
+## Future Improvements
+
+- Add edit functionality for comments.
+- Add owner-only conditional rendering for comment delete buttons.
+- Add richer stat comparison views between players.
+- Add more advanced filters for career years, Hall of Fame status, awards, and nationality.
+- Replace remote image URLs with stored, reliable image assets or a managed media service.
+- Add automated frontend tests for filtering and auth workflows.
+
+## Wins And Key Learnings
+
+- The project now has a complete full-stack deployment with Django, React, Vite, Heroku, and Postgres working together.
+- The API is more useful because it supports practical search, filtering, sorting, and pagination.
+- The frontend is more comprehensive and easier to navigate, with separate home, players, teams, auth, and detail views.
+- Deployment taught the importance of matching frontend asset paths, backend static settings, and Heroku buildpack order.
+- Keeping the original approach while improving the structure made the project stronger without turning it into a completely different app.
 
 
