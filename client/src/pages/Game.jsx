@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { getPlayers, getTeams } from '../api/client'
+import { useEffect, useMemo, useState } from 'react'
+import { getGameLeaderboard, getGameSessions, getGameStats, getPlayers, getTeams, saveGameSession } from '../api/client'
 import SafeImage from '../components/SafeImage'
 import StatusMessage from '../components/StatusMessage'
 import clueBank from '../data/playerGameClues.json'
@@ -7,9 +7,19 @@ import clueBank from '../data/playerGameClues.json'
 const ROUND_COUNT = 10
 
 const difficultySettings = {
-  easy: { label: 'Easy', choices: 4, maxClues: 4, scores: [100, 75, 50, 25] },
-  mid: { label: 'Mid', choices: 4, maxClues: 3, scores: [120, 85, 55] },
-  hard: { label: 'Hard', choices: 6, maxClues: 3, scores: [150, 100, 60] },
+  easy: { label: 'Easy', choices: 4, maxClues: 4, scores: [100, 75, 50, 25], shotClock: 30, description: 'Direct facts, more clues, and forgiving scoring.' },
+  mid: { label: 'Mid', choices: 4, maxClues: 3, scores: [120, 85, 55], shotClock: 24, description: 'Stats, style clues, and fewer chances to narrow it down.' },
+  hard: { label: 'Hard', choices: 6, maxClues: 3, scores: [150, 100, 60], shotClock: 15, description: 'Legacy clues, six choices, and a tighter shot clock.' },
+}
+
+const gameModes = {
+  all: { label: 'All players', test: () => true },
+  active: { label: 'Active only', test: (player) => !player.retired },
+  legends: { label: 'Retired legends', test: (player) => player.retired },
+  champions: { label: 'Champions', test: (player) => (player.championships || 0) > 0 },
+  mvps: { label: 'MVP club', test: (player) => (player.mvps || 0) > 0 },
+  guards: { label: 'Guards', test: (player) => (player.position || '').toLowerCase().includes('guard') },
+  bigs: { label: 'Bigs', test: (player) => /(center|forward)/i.test(player.position || '') },
 }
 
 function shuffle(items) {
@@ -74,13 +84,23 @@ function makeOptions(answer, players, choiceCount) {
   return shuffle([answer, ...wrongAnswers])
 }
 
-function makeRounds(players, teams, difficulty) {
+function makeRounds(players, teams, difficulty, mode) {
   const setting = difficultySettings[difficulty]
-  return shuffle(players).slice(0, Math.min(ROUND_COUNT, players.length)).map((player) => ({
+  const modePlayers = players.filter(gameModes[mode].test)
+  const eligiblePlayers = modePlayers.length >= setting.choices ? modePlayers : players
+
+  return shuffle(eligiblePlayers).slice(0, Math.min(ROUND_COUNT, eligiblePlayers.length)).map((player) => ({
     answer: player,
-    choices: makeOptions(player, players, setting.choices),
+    choices: makeOptions(player, eligiblePlayers, setting.choices),
     clues: getClues(player, teams, difficulty),
   }))
+}
+
+function getRoundPoints(setting, visibleClues, timedOut, streak) {
+  if (timedOut) return 0
+  const basePoints = setting.scores[Math.min(visibleClues - 1, setting.scores.length - 1)] || 0
+  const streakBonus = streak >= 2 ? streak * 10 : 0
+  return basePoints + streakBonus
 }
 
 function Game() {
@@ -89,12 +109,73 @@ function Game() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [difficulty, setDifficulty] = useState('easy')
+  const [mode, setMode] = useState('all')
+  const [shotClockEnabled, setShotClockEnabled] = useState(false)
   const [rounds, setRounds] = useState([])
   const [roundIndex, setRoundIndex] = useState(0)
   const [visibleClues, setVisibleClues] = useState(1)
   const [selectedId, setSelectedId] = useState(null)
+  const [timedOut, setTimedOut] = useState(false)
+  const [timeLeft, setTimeLeft] = useState(difficultySettings.easy.shotClock)
   const [score, setScore] = useState(0)
   const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [streak, setStreak] = useState(0)
+  const [bestStreak, setBestStreak] = useState(0)
+  const [roundHistory, setRoundHistory] = useState([])
+  const [gameStartedAt, setGameStartedAt] = useState(null)
+  const [saveStatus, setSaveStatus] = useState('idle')
+  const [stats, setStats] = useState(null)
+  const [leaderboard, setLeaderboard] = useState([])
+  const [recentSessions, setRecentSessions] = useState([])
+
+  const setting = difficultySettings[difficulty]
+  const currentRound = rounds[roundIndex]
+  const hasAnswered = selectedId !== null || timedOut
+  const selectedCorrectly = hasAnswered && selectedId === currentRound?.answer.id
+  const gameFinished = rounds.length > 0 && roundIndex >= rounds.length
+  const filteredPlayerCount = useMemo(() => players.filter(gameModes[mode].test).length, [players, mode])
+  const currentWorth = currentRound && !hasAnswered ? getRoundPoints(setting, visibleClues, false, streak + 1) : 0
+
+  async function loadGameMeta() {
+    const [statsResult, leaderboardResult, sessionsResult] = await Promise.allSettled([
+      getGameStats(),
+      getGameLeaderboard(),
+      getGameSessions(),
+    ])
+
+    if (statsResult.status === 'fulfilled') setStats(statsResult.value)
+    if (leaderboardResult.status === 'fulfilled') setLeaderboard(leaderboardResult.value)
+    if (sessionsResult.status === 'fulfilled') setRecentSessions(sessionsResult.value)
+  }
+
+  function selectAnswer(playerId, timeout = false) {
+    if (hasAnswered || !currentRound) return
+
+    const isCorrect = playerId === currentRound.answer.id
+    const nextStreak = isCorrect ? streak + 1 : 0
+    const earnedPoints = isCorrect ? getRoundPoints(setting, visibleClues, timeout, nextStreak) : 0
+    const selectedPlayer = currentRound.choices.find((player) => player.id === playerId)
+
+    setSelectedId(playerId)
+    setTimedOut(timeout)
+    setScore((currentScore) => currentScore + earnedPoints)
+    setCorrectAnswers((currentTotal) => currentTotal + (isCorrect ? 1 : 0))
+    setStreak(nextStreak)
+    setBestStreak((currentBest) => Math.max(currentBest, nextStreak))
+    setRoundHistory((history) => [...history, {
+      round: roundIndex + 1,
+      answer: currentRound.answer.names,
+      selected: timeout ? 'Shot clock expired' : selectedPlayer?.names || 'No answer',
+      correct: isCorrect,
+      clues_used: visibleClues,
+      points: earnedPoints,
+    }])
+  }
+
+  function showNextClue() {
+    if (!currentRound || hasAnswered) return
+    setVisibleClues((currentTotal) => Math.min(currentRound.clues.length, currentTotal + 1))
+  }
 
   useEffect(() => {
     async function loadGameData() {
@@ -108,6 +189,7 @@ function Game() {
         ])
         setPlayers(playerData.results || playerData)
         setTeams(teamData)
+        await loadGameMeta()
       } catch (err) {
         setError(err.message)
       } finally {
@@ -118,49 +200,101 @@ function Game() {
     loadGameData()
   }, [])
 
-  const currentRound = rounds[roundIndex]
-  const hasAnswered = selectedId !== null
-  const selectedCorrectly = hasAnswered && selectedId === currentRound?.answer.id
-  const setting = difficultySettings[difficulty]
-  const gameFinished = rounds.length > 0 && roundIndex >= rounds.length
+  useEffect(() => {
+    if (!currentRound || !shotClockEnabled || hasAnswered || gameFinished) return undefined
+    if (timeLeft <= 0) {
+      selectAnswer(null, true)
+      return undefined
+    }
 
-  function startGame(nextDifficulty = difficulty) {
+    const timerId = window.setTimeout(() => setTimeLeft((current) => current - 1), 1000)
+    return () => window.clearTimeout(timerId)
+  }, [currentRound, gameFinished, hasAnswered, shotClockEnabled, timeLeft])
+
+  useEffect(() => {
+    function handleKeydown(event) {
+      if (!currentRound) return
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return
+
+      if (!hasAnswered && event.key.toLowerCase() === 'c') {
+        event.preventDefault()
+        showNextClue()
+      }
+
+      if (!hasAnswered && /^[1-6]$/.test(event.key)) {
+        const option = currentRound.choices[Number(event.key) - 1]
+        if (option) {
+          event.preventDefault()
+          selectAnswer(option.id)
+        }
+      }
+
+      if (hasAnswered && event.key === 'Enter') {
+        event.preventDefault()
+        nextRound()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeydown)
+    return () => window.removeEventListener('keydown', handleKeydown)
+  }, [currentRound, hasAnswered, visibleClues, selectedId, timedOut])
+
+  function startGame(nextDifficulty = difficulty, nextMode = mode) {
+    const nextSetting = difficultySettings[nextDifficulty]
+
     setDifficulty(nextDifficulty)
-    setRounds(makeRounds(players, teams, nextDifficulty))
+    setMode(nextMode)
+    setRounds(makeRounds(players, teams, nextDifficulty, nextMode))
     setRoundIndex(0)
     setVisibleClues(1)
     setSelectedId(null)
+    setTimedOut(false)
+    setTimeLeft(nextSetting.shotClock)
     setScore(0)
     setCorrectAnswers(0)
+    setStreak(0)
+    setBestStreak(0)
+    setRoundHistory([])
+    setGameStartedAt(Date.now())
+    setSaveStatus('idle')
   }
 
-  function selectAnswer(playerId) {
-    if (hasAnswered || !currentRound) return
+  async function finishGame() {
+    setRoundIndex(rounds.length)
 
-    setSelectedId(playerId)
+    if (!rounds.length || saveStatus === 'saving' || saveStatus === 'saved') return
 
-    if (playerId === currentRound.answer.id) {
-      const earnedPoints = setting.scores[Math.min(visibleClues - 1, setting.scores.length - 1)] || 0
-      setScore((currentScore) => currentScore + earnedPoints)
-      setCorrectAnswers((currentTotal) => currentTotal + 1)
+    setSaveStatus('saving')
+
+    try {
+      await saveGameSession({
+        difficulty,
+        mode,
+        score,
+        rounds_played: rounds.length,
+        correct_answers: correctAnswers,
+        best_streak: bestStreak,
+        duration_seconds: gameStartedAt ? Math.max(1, Math.round((Date.now() - gameStartedAt) / 1000)) : 0,
+        summary: roundHistory,
+      })
+      setSaveStatus('saved')
+      await loadGameMeta()
+    } catch (_err) {
+      setSaveStatus('failed')
     }
-  }
-
-  function showNextClue() {
-    if (!currentRound) return
-    setVisibleClues((currentTotal) => Math.min(currentRound.clues.length, currentTotal + 1))
   }
 
   function nextRound() {
     if (roundIndex >= rounds.length - 1) {
-      setRoundIndex(rounds.length)
-      setSelectedId(null)
+      finishGame()
       return
     }
 
     setRoundIndex((currentIndex) => currentIndex + 1)
     setVisibleClues(1)
     setSelectedId(null)
+    setTimedOut(false)
+    setTimeLeft(setting.shotClock)
   }
 
   if (loading) {
@@ -192,17 +326,38 @@ function Game() {
       <section className="page-heading game-heading">
         <p className="eyebrow">Members game mode</p>
         <h1>Guess the Legend</h1>
-        <p>Ask for clues, read the player profile, and identify the hidden basketball legend before the score drops.</p>
+        <p>Ask for clues, manage the shot clock, build a streak, and save your best runs to the leaderboard.</p>
+      </section>
+
+      <section className="game-dashboard" aria-label="Your game stats">
+        <div><span>{stats?.best_score ?? 0}</span><p>Best score</p></div>
+        <div><span>{stats?.accuracy ?? 0}%</span><p>Accuracy</p></div>
+        <div><span>{stats?.best_streak ?? 0}</span><p>Best streak</p></div>
+        <div><span>{stats?.games_played ?? 0}</span><p>Saved games</p></div>
       </section>
 
       <section className="game-panel">
         <div className="game-settings">
           {Object.entries(difficultySettings).map(([key, value]) => (
-            <button key={key} type="button" className={key === difficulty ? 'is-active' : ''} onClick={() => startGame(key)}>
+            <button key={key} type="button" className={key === difficulty ? 'is-active' : ''} onClick={() => rounds.length ? startGame(key, mode) : setDifficulty(key)}>
               <span>{value.label}</span>
-              <small>{value.choices} choices, {value.maxClues} clues</small>
+              <small>{value.description}</small>
             </button>
           ))}
+        </div>
+
+        <div className="game-mode-bar">
+          <label>
+            <span>Run type</span>
+            <select value={mode} onChange={(event) => rounds.length ? startGame(difficulty, event.target.value) : setMode(event.target.value)}>
+              {Object.entries(gameModes).map(([key, value]) => <option key={key} value={key}>{value.label}</option>)}
+            </select>
+          </label>
+          <label className="toggle-row">
+            <input type="checkbox" checked={shotClockEnabled} onChange={(event) => setShotClockEnabled(event.target.checked)} />
+            <span>Shot Clock Mode ({setting.shotClock}s)</span>
+          </label>
+          <p>{filteredPlayerCount || players.length} eligible players. Keyboard: 1-6 answers, C clue, Enter next.</p>
         </div>
 
         {!rounds.length && (
@@ -210,38 +365,56 @@ function Game() {
             <div>
               <p className="eyebrow">Guess Who format</p>
               <h2>Pick a mode and start a 10-round run.</h2>
-              <p>Easy leans on direct facts, Mid mixes stats with style, and Hard hides the obvious names behind legacy clues.</p>
+              <p>Every correct answer earns points, longer streaks add bonuses, and each saved run updates your profile stats.</p>
             </div>
             <button className="button" type="button" onClick={() => startGame()}>Start game</button>
           </div>
         )}
 
         {gameFinished && (
-          <div className="game-start-card game-start-card--finished">
-            <div>
-              <p className="eyebrow">Final score</p>
-              <h2>{score} points</h2>
-              <p>You guessed {correctAnswers} of {rounds.length} legends correctly on {setting.label} mode.</p>
+          <div className="game-results-layout">
+            <div className="game-start-card game-start-card--finished">
+              <div>
+                <p className="eyebrow">Final buzzer</p>
+                <h2>{score} points</h2>
+                <p>You guessed {correctAnswers} of {rounds.length} legends correctly on {setting.label} mode with a best streak of {bestStreak}.</p>
+                <p className={`save-status save-status--${saveStatus}`}>{saveStatus === 'saved' ? 'Saved to your profile and leaderboard.' : saveStatus === 'failed' ? 'Game finished, but saving failed. Try again after checking your login.' : 'Saving your run...'}</p>
+              </div>
+              <button className="button" type="button" onClick={() => startGame()}>Run it back</button>
             </div>
-            <button className="button" type="button" onClick={() => startGame()}>Run it back</button>
+
+            <section className="round-summary">
+              <div className="section-heading">
+                <p className="eyebrow">Run summary</p>
+                <h2>Every possession</h2>
+              </div>
+              {roundHistory.map((round) => (
+                <article key={round.round} className={round.correct ? 'is-correct' : 'is-wrong'}>
+                  <span>Round {round.round}</span>
+                  <strong>{round.answer}</strong>
+                  <p>{round.correct ? `${round.points} points with ${round.clues_used} clue${round.clues_used === 1 ? '' : 's'}.` : `Picked ${round.selected}.`}</p>
+                </article>
+              ))}
+            </section>
           </div>
         )}
 
         {currentRound && !gameFinished && (
           <div className="game-board">
             <aside className="mystery-card">
-              <div className={`mystery-card__image${hasAnswered ? ' is-revealed' : ''}`}>
-                {hasAnswered ? <SafeImage src={currentRound.answer.image} alt={currentRound.answer.names} fallbackLabel={currentRound.answer.names} /> : <span>?</span>}
+              <div className={`mystery-card__image${hasAnswered ? ' is-revealed' : ''}`} style={{ '--reveal-blur': `${Math.max(2, 18 - visibleClues * 4)}px` }}>
+                <SafeImage src={currentRound.answer.image} alt={hasAnswered ? currentRound.answer.names : 'Mystery player'} fallbackLabel={currentRound.answer.names} />
+                {!hasAnswered && <span>?</span>}
               </div>
               <div>
                 <p className="eyebrow">Round {roundIndex + 1} / {rounds.length}</p>
                 <h2>{hasAnswered ? currentRound.answer.names : 'Mystery legend'}</h2>
-                <p>{hasAnswered ? currentRound.answer.description : `${setting.label} mode. Use fewer clues for a higher score.`}</p>
+                <p>{hasAnswered ? currentRound.answer.description : `${setting.label} ${gameModes[mode].label}. Current answer worth ${currentWorth} points.`}</p>
               </div>
               <dl className="game-score-strip">
                 <div><dt>Score</dt><dd>{score}</dd></div>
-                <div><dt>Correct</dt><dd>{correctAnswers}</dd></div>
-                <div><dt>Clues</dt><dd>{visibleClues}/{currentRound.clues.length}</dd></div>
+                <div><dt>Streak</dt><dd>{streak}</dd></div>
+                <div><dt>Clock</dt><dd>{shotClockEnabled ? timeLeft : 'Off'}</dd></div>
               </dl>
             </aside>
 
@@ -259,11 +432,12 @@ function Game() {
               </ol>
 
               <div className="answer-grid">
-                {currentRound.choices.map((player) => {
+                {currentRound.choices.map((player, index) => {
                   const isSelected = selectedId === player.id
                   const isAnswer = hasAnswered && player.id === currentRound.answer.id
                   return (
                     <button key={player.id} type="button" className={`${isSelected ? 'is-selected' : ''}${isAnswer ? ' is-answer' : ''}`} disabled={hasAnswered} onClick={() => selectAnswer(player.id)}>
+                      <span>{index + 1}</span>
                       {player.names}
                     </button>
                   )
@@ -271,15 +445,47 @@ function Game() {
               </div>
 
               {hasAnswered && (
-                <div className={`game-result ${selectedCorrectly ? 'game-result--correct' : 'game-result--wrong'}`}>
-                  <strong>{selectedCorrectly ? 'Correct' : `It was ${currentRound.answer.names}`}</strong>
-                  <p>{selectedCorrectly ? `You scored ${setting.scores[Math.min(visibleClues - 1, setting.scores.length - 1)] || 0} points.` : 'No points this round, but the scouting report is yours now.'}</p>
+                <div className={`game-result ${selectedCorrectly ? 'game-result--correct' : 'game-result--wrong'}`} aria-live="polite">
+                  <div>
+                    <strong>{selectedCorrectly ? 'Correct' : timedOut ? `Shot clock expired. It was ${currentRound.answer.names}` : `It was ${currentRound.answer.names}`}</strong>
+                    <p>{selectedCorrectly ? `${roundHistory.at(-1)?.points || 0} points. ${streak >= 2 ? `Streak bonus active at ${streak} straight.` : 'Build a streak for bonus points.'}` : 'No points this round, but the scouting report is yours now.'}</p>
+                  </div>
                   <button className="button" type="button" onClick={nextRound}>{roundIndex >= rounds.length - 1 ? 'Finish game' : 'Next round'}</button>
                 </div>
               )}
             </section>
           </div>
         )}
+      </section>
+
+      <section className="game-side-panels">
+        <div className="leaderboard-panel">
+          <div className="section-heading">
+            <p className="eyebrow">Leaderboard</p>
+            <h2>Top saved runs</h2>
+          </div>
+          {leaderboard.length ? leaderboard.map((session, index) => (
+            <article key={session.id}>
+              <span>#{index + 1}</span>
+              <strong>{session.owner_username}</strong>
+              <p>{session.score} pts - {session.difficulty} - {session.mode}</p>
+            </article>
+          )) : <p className="muted">No saved runs yet.</p>}
+        </div>
+
+        <div className="leaderboard-panel">
+          <div className="section-heading">
+            <p className="eyebrow">Your history</p>
+            <h2>Recent runs</h2>
+          </div>
+          {recentSessions.length ? recentSessions.slice(0, 5).map((session) => (
+            <article key={session.id}>
+              <span>{session.correct_answers}/{session.rounds_played}</span>
+              <strong>{session.score} points</strong>
+              <p>{session.difficulty} - {session.mode} - streak {session.best_streak}</p>
+            </article>
+          )) : <p className="muted">Your saved runs will appear here.</p>}
+        </div>
       </section>
     </main>
   )

@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/basketball/', include('basketball.urls')),  # nba-players model
     path('api/teams/', include('teams.urls')),
     path('api/comments/', include('comments.urls')),
+    path('api/games/', include('games.urls')),
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]

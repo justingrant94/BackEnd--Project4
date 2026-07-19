@@ -77,3 +77,22 @@ export function deleteComment(id) {
     method: 'DELETE',
   })
 }
+
+export function getGameSessions() {
+  return apiRequest('/games/sessions/')
+}
+
+export function saveGameSession(payload) {
+  return apiRequest('/games/sessions/', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  })
+}
+
+export function getGameLeaderboard() {
+  return apiRequest('/games/leaderboard/')
+}
+
+export function getGameStats() {
+  return apiRequest('/games/stats/')
+}
