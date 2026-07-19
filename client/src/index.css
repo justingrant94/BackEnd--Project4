@@ -335,6 +335,10 @@ h3 {
 .filter-bar,
 .player-card,
 .team-card,
+.game-panel,
+.game-start-card,
+.mystery-card,
+.clue-board,
 .player-detail__media,
 .player-detail__content,
 .comments-panel,
@@ -1086,6 +1090,267 @@ textarea:focus {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.game-page {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.game-heading {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-6);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(246, 196, 83, 0.22), transparent 34%),
+    var(--color-overlay-light);
+  box-shadow: var(--shadow-card);
+}
+
+.game-panel {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5);
+}
+
+.game-settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.game-settings button,
+.answer-grid button {
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  color: var(--color-ink);
+  background: var(--color-panel);
+  cursor: pointer;
+  font-weight: 1000;
+}
+
+.game-settings button {
+  display: grid;
+  gap: 3px;
+  padding: var(--space-3);
+  text-align: left;
+}
+
+.game-settings button span {
+  font-size: var(--type-md);
+}
+
+.game-settings button small {
+  color: var(--color-muted);
+  font-weight: 900;
+}
+
+.game-settings button:hover,
+.game-settings button:focus-visible,
+.game-settings button.is-active {
+  color: var(--color-paper);
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  outline: 0;
+}
+
+.game-settings button:hover small,
+.game-settings button:focus-visible small,
+.game-settings button.is-active small {
+  color: var(--color-panel-strong);
+}
+
+.game-start-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background:
+    linear-gradient(135deg, var(--color-paper), var(--color-panel));
+}
+
+.game-start-card h2 {
+  margin: var(--space-2) 0;
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.game-start-card p:not(.eyebrow),
+.mystery-card p,
+.game-result p {
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.game-start-card--finished {
+  border-color: var(--color-success);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.mystery-card,
+.clue-board {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.mystery-card {
+  align-content: start;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.mystery-card p,
+.mystery-card .eyebrow {
+  color: var(--color-panel-strong);
+}
+
+.mystery-card__image {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(242, 140, 40, 0.44), transparent 34%),
+    linear-gradient(135deg, var(--color-ink), var(--color-ink-soft));
+  overflow: hidden;
+}
+
+.mystery-card__image > span {
+  font-size: clamp(88px, 12vw, 150px);
+  font-family: var(--font-display);
+  font-weight: 1000;
+}
+
+.mystery-card__image .safe-image {
+  min-height: 280px;
+}
+
+.mystery-card h2,
+.clue-board h2 {
+  margin-top: var(--space-1);
+  font-size: clamp(28px, 4vw, 46px);
+}
+
+.game-score-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.game-score-strip div {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.game-score-strip dt {
+  color: var(--color-panel-strong);
+  font-size: 11px;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+.game-score-strip dd {
+  margin: 4px 0 0;
+  font-size: var(--type-lg);
+  font-weight: 1000;
+}
+
+.clue-board .section-heading {
+  margin: 0;
+}
+
+.clue-list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clue-list li {
+  border: 1px solid var(--color-line);
+  border-left: 5px solid var(--color-court);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background: var(--color-panel);
+  color: var(--color-ink-soft);
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.answer-grid button {
+  min-height: 58px;
+  padding: var(--space-3);
+}
+
+.answer-grid button:hover,
+.answer-grid button:focus-visible {
+  border-color: var(--color-accent-blue);
+  background: #edf3ff;
+  outline: 0;
+}
+
+.answer-grid button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.answer-grid button.is-selected {
+  color: var(--color-paper);
+  border-color: var(--color-danger);
+  background: var(--color-danger);
+}
+
+.answer-grid button.is-answer {
+  color: var(--color-paper);
+  border-color: var(--color-success);
+  background: var(--color-success);
+}
+
+.game-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-panel);
+}
+
+.game-result strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: var(--type-md);
+}
+
+.game-result--correct {
+  border-color: var(--color-success);
+  background: #edfbf6;
+}
+
+.game-result--wrong {
+  border-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
 .team-card {
   display: grid;
   gap: var(--space-4);
@@ -1154,7 +1419,8 @@ textarea:focus {
 
 @media (max-width: 980px) {
   .hero-section,
-  .player-detail {
+  .player-detail,
+  .game-board {
     grid-template-columns: 1fr;
   }
 
@@ -1165,7 +1431,8 @@ textarea:focus {
   .filter-bar,
   .player-grid,
   .team-grid,
-  .stats-panel {
+  .stats-panel,
+  .game-settings {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1232,9 +1499,25 @@ textarea:focus {
   }
 
   .section-heading--split,
-  .results-meta {
+  .results-meta,
+  .game-start-card,
+  .game-result {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .game-panel,
+  .game-heading,
+  .mystery-card,
+  .clue-board,
+  .game-start-card {
+    padding: var(--space-4);
+  }
+
+  .game-settings,
+  .answer-grid,
+  .game-score-strip {
+    grid-template-columns: 1fr;
   }
 
   .player-detail__media .safe-image {

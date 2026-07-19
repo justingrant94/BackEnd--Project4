@@ -27,7 +27,10 @@ function Navbar() {
         <NavLink to="/players">Players</NavLink>
         <NavLink to="/teams">Teams</NavLink>
         {loggedIn ? (
-          <button className="nav-button" type="button" onClick={handleLogout}>Logout</button>
+          <>
+            <NavLink to="/game">Game</NavLink>
+            <button className="nav-button" type="button" onClick={handleLogout}>Logout</button>
+          </>
         ) : (
           <>
             <NavLink to="/login">Login</NavLink>

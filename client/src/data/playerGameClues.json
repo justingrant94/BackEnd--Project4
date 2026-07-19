@@ -1,0 +1,62 @@
+{
+  "Stephen Curry": {
+    "easy": ["This legend is a point guard.", "This legend is tied to Golden State.", "This legend has multiple MVP awards."],
+    "mid": ["This legend entered the league in 2009.", "Defenses started picking this player up far beyond the three-point line.", "Movement shooting is a major part of this player's legacy."],
+    "hard": ["This player changed the geometry of modern offense.", "The threat is as dangerous without the ball as with it.", "A dynasty's spacing principles were built around this player."]
+  },
+  "LeBron James": {
+    "easy": ["This legend is a forward.", "This legend has won four MVP awards.", "This legend has one of the longest elite primes ever."],
+    "mid": ["This player entered the league straight from high school hype.", "Playmaking, size, and scoring all define this profile.", "This player became a championship centerpiece for multiple teams."],
+    "hard": ["The game often bends around this player's decisions in transition.", "Longevity is part of the argument, not a side note.", "This player can function as the offense's engine from nearly any position."]
+  },
+  "Kevin Durant": {
+    "easy": ["This legend is a forward.", "This legend has won multiple championships.", "This player is known for elite scoring efficiency."],
+    "mid": ["This player's height and handle create unusual shot windows.", "This player can score from every level of the floor.", "This player has played for several high-profile contenders."],
+    "hard": ["Contests often feel decorative against this release point.", "The profile blends wing skill with near-center length.", "This player's shot diet ignores most normal defensive math."]
+  },
+  "Michael Jordan": {
+    "easy": ["This legend is a shooting guard.", "This legend won six championships.", "This legend became one of sport's defining icons."],
+    "mid": ["This player's prime is tied to Chicago.", "Two-way dominance and scoring titles define the legacy.", "This player never lost in the Finals."],
+    "hard": ["The midrange became a stage for inevitability.", "Competitive mythology surrounds almost every chapter of this career.", "This player set the modern standard for superstar aura."]
+  },
+  "Kobe Bryant": {
+    "easy": ["This legend is a shooting guard.", "This legend won five championships.", "This player's career is tied strongly to the Lakers."],
+    "mid": ["Footwork, difficult shot-making, and relentless work define the profile.", "This player entered the league in 1996.", "This player became a generation's scoring blueprint."],
+    "hard": ["The fadeaway often arrived after a full lesson in footwork.", "This career is remembered as much for mentality as production.", "A late-clock possession rarely felt too ambitious for this player."]
+  },
+  "Shaquille O'Neal": {
+    "easy": ["This legend is a center.", "This legend won four championships.", "This player was one of basketball's most physically dominant forces."],
+    "mid": ["This player's prime overwhelmed the paint.", "This player won titles as a Lakers centerpiece.", "Defenses often had to foul because normal coverage failed."],
+    "hard": ["The rim area became a negotiation defenders usually lost.", "Power, footwork, and personality all shaped the legacy.", "This player forced roster decisions around size and fouls."]
+  },
+  "Magic Johnson": {
+    "easy": ["This legend is a point guard.", "This legend won five championships.", "This player's career is tied to Showtime basketball."],
+    "mid": ["This player redefined size at point guard.", "Transition passing is central to the legacy.", "This player entered the league in 1979."],
+    "hard": ["A fast break became theater with this player leading it.", "Vision and joy were tactical weapons.", "This player made pace feel glamorous."]
+  },
+  "Nikola Jokic": {
+    "easy": ["This player is a center.", "This player is from Serbia.", "This player has multiple MVP awards."],
+    "mid": ["This player's passing changes how a center can run offense.", "Touch, patience, and angles matter more than vertical explosion here.", "This player became a franchise champion in Denver."],
+    "hard": ["The ball finds cutters before the defense admits the window exists.", "This player's tempo makes chaos look slow.", "The offense can orbit a center above the elbows."]
+  },
+  "Giannis Antetokounmpo": {
+    "easy": ["This player is a forward.", "This player is from Greece.", "This player brought Milwaukee a championship."],
+    "mid": ["Transition pressure is one of this player's biggest weapons.", "This player combines rim force with elite defense.", "This player has multiple MVP awards."],
+    "hard": ["A few long strides can turn half court into the restricted area.", "The profile is built on pressure, length, and recovery speed.", "This player's development arc became part of the legend."]
+  },
+  "Luka Doncic": {
+    "easy": ["This player is a guard.", "This player is from Slovenia.", "This player controls pace as a primary creator."],
+    "mid": ["This player entered the league in 2018.", "Stepbacks and manipulation define much of the scoring game.", "This player plays with unusual size for a lead creator."],
+    "hard": ["The defense often moves at this player's preferred speed.", "A possession can become a chess puzzle in isolation.", "This player's passing windows appear late but arrive exactly on time."]
+  },
+  "Kyrie Irving": {
+    "easy": ["This player is a point guard.", "This player has won one championship.", "This player is known for elite ball handling."],
+    "mid": ["Creative finishing is central to this player's identity.", "This player can make difficult guard shots look controlled.", "This player entered the league in 2011."],
+    "hard": ["The handle can turn a defender's balance into a liability.", "English off the glass is part of the signature.", "The shot-making often feels improvised but precise."]
+  },
+  "Jayson Tatum": {
+    "easy": ["This player is a forward.", "This player is tied to Boston.", "This player is a modern scoring wing."],
+    "mid": ["This player entered the league in 2017.", "Three-level scoring and defensive size define the role.", "This player became a centerpiece of Boston's modern core."],
+    "hard": ["The game leans on clean footwork and high-release jumpers.", "This player's role asks for both volume and wing defense.", "The profile is built for playoff matchup hunting."]
+  }
+}
