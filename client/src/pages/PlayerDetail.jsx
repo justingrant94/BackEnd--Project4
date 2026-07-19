@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getPlayer } from '../api/client'
 import CommentSection from '../components/CommentSection'
-import SafeImage from '../components/SafeImage'
+import PlayerMediaCarousel from '../components/PlayerMediaCarousel'
 import StatsPanel from '../components/StatsPanel'
 import StatusMessage from '../components/StatusMessage'
 import TeamChip from '../components/TeamChip'
@@ -61,7 +61,7 @@ function PlayerDetail() {
 
       <section className="player-detail">
         <div className="player-detail__media">
-          <SafeImage src={player.image} alt={player.names} fallbackLabel={player.names} />
+          <PlayerMediaCarousel player={player} />
         </div>
 
         <div className="player-detail__content">

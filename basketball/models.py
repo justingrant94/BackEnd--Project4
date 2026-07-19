@@ -33,6 +33,7 @@ class Basketball(models.Model):
     championships = models.PositiveIntegerField(default=0)
     mvps = models.PositiveIntegerField(default=0)
     all_star_appearances = models.PositiveIntegerField(default=0)
+    media = models.JSONField(default=list, blank=True)
     source_url = models.URLField(max_length=500, blank=True, null=True)
     teams = models.ManyToManyField(
         'teams.Team',
